@@ -1,3 +1,3 @@
 git add .
-git commit -m 'frommac'
+git commit -m 'À´×Ômac'
 git push
