@@ -1,3 +1,3 @@
 git add .
 git commit -m 'À´×Ôcompany'
-git push
+ git push origin HEAD:master
