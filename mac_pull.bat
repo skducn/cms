@@ -1,3 +1,4 @@
+del cms.mdb
 git pull
 
 c:
