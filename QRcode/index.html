@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>jQuery网页二维码生成插件 - A5源码</title>
+
+<style>
+.sm{
+width: 350px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px;
+}
+</style>
+
+</head>
+<body onLoad="createQrcode()"> <!--默认载人方法-->
+
+<div id='qrcode' style='margin-left: 45%; margin-top: 10%'></div>
+
+<script type="text/javascript" src="jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="qrcode.js"></script>
+<script type="text/javascript" src="utf.js"></script>
+<script type="text/javascript" src="jquery.qrcode.js" ></script>
+<script type="text/javascript">
+	function makeCode(url) {
+		$("#qrcode").qrcode({
+			render: "canvas",
+			text: "http://www.baidu.com",
+			width : "150",               //二维码的宽度
+			height : "150",              //二维码的高度
+			background : "#ffffff",       //二维码的后景色
+			foreground : "#000000",        //二维码的前景色
+			src: 'logo.png'             //二维码中间的图片
+		});
+	}
+	function createQrcode () {
+		var url = '';//$('#url').val();
+		makeCode(url);
+	}
+</script>
+	
+
+
+</body>
+</html>

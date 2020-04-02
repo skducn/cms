@@ -1,0 +1,68 @@
+# Helicon ISAPI_Rewrite configuration file
+# Version 3.1.0.112
+
+RewriteEngine on
+rewriteBase /
+
+RewriteRule ^index.html /index.asp
+RewriteRule ^indexLogin.html /index.asp?action=login
+RewriteRule ^indexExit.html /index.asp?action=exit
+RewriteRule ^indexClear-(.*).html /index.asp?action=clear&userName=$1
+RewriteRule ^lock.html /lock.asp
+RewriteRule ^lockLogin.html /lock.asp?action=login
+
+RewriteRule ^searchSearch.html /search.asp?action=search
+RewriteRule ^searchTag-(.*).html /search.asp?action=tag&tagId=$1
+RewriteRule ^searchSort-(.*).html /search.asp?action=sort&sortId=$1
+RewriteRule ^searchResult-(.*).html /searchResult.asp?cId=$1
+RewriteRule ^searchEdit-(.*).html /searchEdit.asp?cId=$1
+RewriteRule ^searchError-(.*).html /searchError.asp?sname=$1
+
+RewriteRule ^dashboard.html /dashboard.asp
+RewriteRule ^dashboardSave.html /dashboard.asp?action=save
+RewriteRule ^dashboardSaveShort.html /dashboard.asp?action=saveShort
+RewriteRule ^menu.html /menu.asp
+RewriteRule ^menu-delTag-(.*).html /menu.asp?action=delTag&tagId=$1
+RewriteRule ^menu-delSort-(.*).html /menu.asp?action=delSort&sortId=$1
+
+RewriteRule ^articleAdd.html /articleAdd.asp
+RewriteRule ^articleAdd-(.*)-(.*).html /articleAdd.asp?sortId=$1&tagId=$2
+RewriteRule ^articleAddSave.html /articleAdd.asp?action=save
+RewriteRule ^articleAddSaveShort.html /articleAdd.asp?action=saveShort
+RewriteRule ^article-(.*)-(.*).html /article.asp?cId=$1&sortId=$2
+RewriteRule ^articleSaveShort.html /article.asp?action=saveShort
+
+RewriteRule ^articleEdit-(.*).html /articleEdit.asp?cId=$1
+RewriteRule ^articleEditSave.html /articleEdit.asp?action=save
+RewriteRule ^articleEditSaveShort.html /articleEdit.asp?action=saveShort
+RewriteRule ^articleEditSaveShortEdit.html /articleEdit.asp?action=saveShortEdit
+RewriteRule ^articleNoshare-(.*)-(.*).html /article.asp?action=noshare&cId=$1&sortId=$2
+RewriteRule ^articleShare-(.*)-(.*).html /article.asp?action=share&cId=$1&sortId=$2
+RewriteRule ^articleEditdel-(.*).html /articleEdit.asp?action=del&cId=$1
+
+
+
+RewriteRule ^backstage/bMain.html /backstage/bMain.asp
+RewriteRule ^backstage/bMain-del-(.*).html /backstage/bMain.asp?action=del&keyId=$1
+RewriteRule ^backstage/bSortTagEdit-(.*)-(.*).html /backstage/bSortTagEdit.asp?sortId=$1&userName=$2
+RewriteRule ^backstage/bSortEdit-(.*).html /backstage/bSortEdit.asp?sortId=$1
+RewriteRule ^backstage/bMain-articleList-(.*).html /backstage/bMain.asp?action=articleList&sortId=$1
+RewriteRule ^backstage/bMainArticleList-(.*)-(.*).html /backstage/bMain.asp?action=articleList&sortId=$1&tagId=$2
+RewriteRule ^backstage/theme-setting.html /backstage/theme-setting.asp
+
+RewriteRule ^backstage/bUserAdd.html /backstage/bUserAdd.asp
+RewriteRule ^backstage/bUserEdit-(.*).html /backstage/bUserEdit.asp?userId=$1
+RewriteRule ^backstage/bUserEditSave.html /backstage/bUserEdit.asp?action=save
+RewriteRule ^backstage/bUserEditDel-(.*).html /backstage/bUserEdit.asp?action=del&userId=$1
+
+RewriteRule ^backstage/bGroupAdd.html /backstage/bGroupAdd.asp
+RewriteRule ^backstage/bGroupEdit-(.*).html /backstage/bGroupEdit.asp?groupId=$1
+
+RewriteRule ^backstage/bSortAdd.html /backstage/bSortAdd.asp
+RewriteRule ^backstage/bSortEdit-(.*).html /backstage/bSortEdit.asp?sortId=$1
+RewriteRule ^backstage/bSortTagEdit-(.*)-(.*).html /backstage/bSortTagEdit.asp?sortId=$1&userName=$2
+RewriteRule ^backstage/bTagAdd-(.*).html /backstage/bTagAdd.asp?sortId=$1
+RewriteRule ^backstage/bTagEdit-(.*)-(.*).html /backstage/bTagEdit.asp?sortId=$1&tagId=$2
+RewriteRule ^backstage/profile.html /backstage/profile.asp
+RewriteRule ^backstage/profileSave.html /backstage/profile.asp?action=save
+
