@@ -1,19 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <configuration>
-    <system.webServer>
-        <directoryBrowse enabled="true" />
-        <defaultDocument>
-            <files>
-                <add value="index.asp" />
-            </files>
+   
+<system.webServer>
+        
+<directoryBrowse enabled="true" />
+        
+<defaultDocument>
+            
+<files>
+         
+       <add value="index.asp" />
+           
+ </files>
        
-        </defaultDocument>
-        <httpErrors>
-            <remove statusCode="404" subStatusCode="-1" />
-            <error statusCode="404" prefixLanguageFilePath="" path="http://172.21.200.54/index.html" responseMode="Redirect" />
-        </httpErrors>
-    </system.webServer>
+        
+</defaultDocument>
+        
+<httpErrors>
+            
+<remove statusCode="404" subStatusCode="-1" />
+            
+<error statusCode="404" prefixLanguageFilePath="" path="http://172.21.200.54/index.html" responseMode="Redirect" />
+        
+</httpErrors>
+    
+</system.webServer>
+
 <system.web>    
-    <sessionState mode="InProc" timeout="480" />   
+    
+<sessionState mode="InProc" timeout="480" />   
+
 </system.web>  
+
 </configuration>
