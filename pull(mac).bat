@@ -1,5 +1,3 @@
-del .\db\cms.mdb
-
 
 git pull origin master
 
