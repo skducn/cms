@@ -1,4 +1,4 @@
-copy .\db\cms.mdb .\db\cms.bak /y
+
 del .\db\cms.mdb
 git pull origin master
 
