@@ -1,4 +1,7 @@
 
+copy cms.mdb cms.bak /y
+del cms.mdb
+
 git pull origin master
 
 
