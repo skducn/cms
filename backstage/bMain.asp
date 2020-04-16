@@ -136,7 +136,7 @@ end if
 						do while not rs.eof %>
 						<div class="form-row">
 							<div class="form-group col-md-1">
-								<a href="bMain-del-<%=rs("keyId")%>.html" class="btn btn-danger" onClick="return confirm('温馨提示，是否删除“<%=rs("keyName")%>（<%=rs("keyLink")%>）”快捷键？')"><i class="fa fa-cut"></i></a>						
+								<a href="bMain-del-<%=rs("keyId")%>.html"  onClick="return confirm('温馨提示，是否删除“<%=rs("keyName")%>（<%=rs("keyLink")%>）”快捷键？')"><i class="fa fa-lg fa-trash"></i></a>					
 							</div>
 							<div class="form-group col-md-11">
 								<% =rs("keyWay")%> - <a href="<%=rs("keyLink")%>" target="_blank"><%=rs("keyName")%></a>（<% =rs("keyLink")%>）

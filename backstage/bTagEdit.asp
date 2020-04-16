@@ -83,6 +83,19 @@ end if
 set rs = server.CreateObject("ADODB.RecordSet")
 rs.Open "select * from tblTag where tagId="&tagId&"",conn,3,3
 
+
+' 删除空标签
+
+if request("action")="del" then
+	set rs = server.CreateObject("adodb.recordset")
+	rs.open "select * from tblTag where tagId="&request("tagId")&"",conn,3,3
+	rs.delete
+	rs.update
+	rs.close
+	set rs = nothing
+	response.Redirect("bMain.html")
+
+end if 
 %>
 
 
@@ -193,6 +206,7 @@ set rs1 = nothing
 						<th>标签名称</th>
 						<th>标签状态</th>
 						<th>共享状态</th>
+						<th>可删除</th>						
 						</tr>
 						</thead>
 						<tbody>
@@ -209,6 +223,13 @@ set rs1 = nothing
 								<%else%>
 									<td><span class="badge badge-danger">关闭</span></td>	
 								<%end if %>
+								<td>
+									<%set rs3 = server.CreateObject("ADODB.RecordSet")
+									rs3.Open "select * from tblContent where tagId="&rs("tagId")&" order by cId desc",conn,3,3
+									if rs3.recordcount = 0 then %>
+									<a href="bTagEditDel-<%=sortId%>-<%=rs("tagId")%>.html"  onClick="return confirm('是否删除<<%=rs("tagName")%>>，确认吗？')" ><i class="fa fa-lg fa-trash"></i>&nbsp;删除</a>
+								<%end if %>
+								</td>
 							<%elseif rs("tagState") = "off" then%>
 								<td><a href="bTagEdit-<%=sortId%>-<%=rs("tagId")%>.html"><%=rs("tagName")%></a></td>
 								<td><span class="badge badge-danger">关闭</span></td>
@@ -216,8 +237,14 @@ set rs1 = nothing
 									<td><span class="badge badge-info">开启</span></td>	
 								<%else%>
 									<td><span class="badge badge-danger">关闭</span></td>	
+								<%end if %>		
+										<td>
+									<%set rs3 = server.CreateObject("ADODB.RecordSet")
+									rs3.Open "select * from tblContent where tagId="&rs("tagId")&" order by cId desc",conn,3,3
+									if rs3.recordcount = 0 then %>
+									<a href="bTagEditDel-<%=sortId%>-<%=rs("tagId")%>.html"  onClick="return confirm('是否删除<<%=rs("tagName")%>>，确认吗？')" ><i class="fa fa-lg fa-trash"></i>&nbsp;删除</a>
 								<%end if %>
-							
+								</td>				
 							<%elseif rs("tagState") = "ban" then%>
 								<td><a href="bTagEdit-<%=sortId%>-<%=rs("tagId")%>.html"><%=rs("tagName")%></a></td>
 								<td><span class="badge badge-dark">禁止</span></td>
@@ -226,6 +253,13 @@ set rs1 = nothing
 								<%else%>
 									<td><span class="badge badge-danger">关闭</span></td>	
 								<%end if %>
+										<td>
+									<%set rs3 = server.CreateObject("ADODB.RecordSet")
+									rs3.Open "select * from tblContent where tagId="&rs("tagId")&" order by cId desc",conn,3,3
+									if rs3.recordcount = 0 then %>
+									<a href="bTagEditDel-<%=sortId%>-<%=rs("tagId")%>.html"  onClick="return confirm('是否删除<<%=rs("tagName")%>>，确认吗？')" ><i class="fa fa-lg fa-trash"></i>&nbsp;删除</a>
+								<%end if %>
+								</td>
 							<%end if %>
 							
 							

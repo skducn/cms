@@ -143,7 +143,7 @@ end if
 					set rs = server.CreateObject("adodb.recordset")
 					rs.open "select * from tblContent where userName='"&session("userName")&"' order by cId desc",conn,3,3		
 					if rs.recordcount <> 0 then %>								
-						<a class="btn btn-primary" href="articleAdd-<%=rs("sortId")%>-<%=rs("tagId")%>.html"><i class="fa fa-plus"></i>&nbsp;新建文章</a>			
+						<a class="btn btn-primary" href="articleAdd-0-0.html"><i class="fa fa-plus"></i>&nbsp;新建文章</a>			
 					<%else%>
 						<a class="btn btn-primary" href="articleAdd.html"><i class="fa fa-plus"></i>&nbsp;新建文章</a>		
 					<%end if 

@@ -17,7 +17,7 @@ rs4.close%>
 $(function () {
 //Initialize Select2 Elements
 $(".select2").select2();
-$(".select4").select2();
+$(".select4").select4();
 });
 </script>
 
@@ -236,11 +236,12 @@ if request("action") = "save" then
 				response.Redirect("article-"&rs3("cId")&"-"&request("sortId")&".html") 					
 			end if 													
 		else 		
-			'标签为空
+			'自定义新标签为空
 			set rs2 = server.createobject("adodb.recordset")	
 			rs2.open "select * from tblContent ",conn,3,3 
 			rs2.addnew
 			rs2("sortId") = request("sortId")
+			rs2("tagId") = request("tagId")
 			if request("tagIdOld") = "" then
 				rs2("tagId") = 0
 			else
@@ -259,7 +260,7 @@ if request("action") = "save" then
 		end if 
 	else
 		 response.Write("<script>;alert('此文章已存在！');</script>") 
- 		 response.Write("<script>;window.location.href='articleAdd.html';</script>") 
+ 		 response.Write("<script>;window.location.href='articleAdd-"&request("sortId")&"-"&request("tagId")&".html';</script>") 
 
 	             
     end if
@@ -331,28 +332,73 @@ end if
 		<div class="form-group">
 			<!-- 类别 -->	
 			<label class="col-md-1 control-label" for="select">类别/标签 *</label>
-			<div class="col-md-2">
-			  <select name="sortId" class="form-control select2" onChange="changeselect1(this.value)">
-				<option value=""> &nbsp;< 选类别 > </option>
-				<%'遍历类别名	
-				set rs = server.CreateObject("adodb.recordset")
-				rs.open "select * from tblSort where userName='"&session("userName")&"' and sortState='on' ",conn,3,3	
-				do while not rs.eof
-					response.write"<option value="&rs("sortId")&">"&rs("sortName")&"</option>"
-				rs.movenext
-				loop							
-				rs.close
-				set rs = nothing
-				%>							
-				</select>																		
-			</div>	
+						
+			
+			
+			
+					<div class="col-md-2">
+					  <select name="sortId" class="form-control select2" onChange="changeselect1(this.value)">
+					 
+						<%'遍历类别名	
+						set rs6 = server.CreateObject("adodb.recordset")
+						
+						if request("sortId") = 0 then %>
+							 <option value=""> &nbsp;<请选择> </option>
+<%							rs6.open "select * from tblSort where userName='"&session("userName")&"' and sortState='on' ",conn,3,3	
+							do while not rs6.eof
+							response.write"<option value="&rs6("sortId")&">"&rs6("sortName")&"</option>"
+							rs6.movenext
+							loop	
+						else				
+						rs6.open "select * from tblSort where userName='"&session("userName")&"' and sortState='on'  order by sortName,sortId asc",conn,3,3		
+							do while not rs6.eof
+								if rs6("sortId") = cint(request("sortId")) then
+									response.write"<option value="&rs6("sortId")&" selected=selected>"&rs6("sortName")&"</option>"
+								else
+									response.write"<option value="&rs6("sortId")&">"&rs6("sortName")&"</option>"
+	
+								end if 
+							rs6.movenext
+							loop
+						end if 		
+											
+						rs6.close
+						set rs6 = nothing
+						%>							
+						</select> 
+					</div>	
 					
-			<!-- 标签 -->	
-			<div class="col-md-2">	
-				<select name="tagIdOld" class="form-control select4">
-				 <option value="0" selected="selected"> &nbsp;< 选标签 > </option>
+					<label class="col-md-1 control-label" for="select">标签</label>	
+					<div class="col-md-2">
+					<%if request("tagId") = 0 then%>	
+					<select name="tagIdOld" class="form-control select4">
+				 <option value="0" selected="selected"> / </option>
 				</select>
-			</div>					 
+				<%else%>
+					<select name="tagIdOld" class="form-control select4" >
+					<% set rs33 = server.createobject("adodb.recordset")							
+					rs33.open "select * from tblTag where sortId="&request("sortId")&" and tagState='on' order by tagName asc",conn,3,3
+					if rs33.eof then%>
+						<option value="0" selected="selected">/</option>
+					<%else%>
+		<option value="0" selected="selected">/</option>
+						<%do while not rs33.eof%>
+							<option value="<%=rs33("tagId")%>" 
+								<%if rs33("tagId")=cint(request("tagId")) then %>
+									selected
+								<%end if%>>
+						<%=rs33("tagName")%></option>												
+						<%rs33.movenext
+						loop
+					end if
+					rs33.close%>
+					</select>																
+				<%end if %>
+					</div>
+			
+			
+			
+				 
 					
 			<!-- 自定义标签 -->	
 			<div class="col-md-2">

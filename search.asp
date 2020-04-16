@@ -92,12 +92,12 @@
 		<div class="card">							
 			<div class="row">
 				<div class="col-md-6">
-					<h3 class="card-title"><%=rs4("sortName")%> - <%=rs2("tagName")%> 记录数：<%=rs.recordcount%>条</h3>
+					<h3 class="card-title"><%=rs4("sortName")%> - <%=rs2("tagName")%> (<%=rs.recordcount%>条)</h3>
 					<%rs4.close
 					set rs4 = nothing%>
 				</div>
 				<div class="col-md-6" align="right">
-					<a class='btn btn-primary' href='articleAdd-0-0.html' data-toggle="tooltip" data-original-title="新建文章"><i class='fa fa-plus'></i> 新建文章</a>		
+					<a class='btn btn-primary' href='articleAdd-<%=rs("sortId")%>-<%=request("tagId")%>.html' data-toggle="tooltip" data-original-title="新建文章"><i class='fa fa-plus'></i> 新建文章</a>		
 					<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底"><i class="fa fa-arrow-circle-down"></i></a>		
 				</div>
 			</div>			

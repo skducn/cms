@@ -63,6 +63,7 @@ RewriteRule ^backstage/bSortEdit-(.*).html /backstage/bSortEdit.asp?sortId=$1
 RewriteRule ^backstage/bSortTagEdit-(.*)-(.*).html /backstage/bSortTagEdit.asp?sortId=$1&userName=$2
 RewriteRule ^backstage/bTagAdd-(.*).html /backstage/bTagAdd.asp?sortId=$1
 RewriteRule ^backstage/bTagEdit-(.*)-(.*).html /backstage/bTagEdit.asp?sortId=$1&tagId=$2
+RewriteRule ^backstage/bTagEditDel-(.*)-(.*).html /backstage/bTagEdit.asp?action=del&sortId=$1&tagId=$2
 RewriteRule ^backstage/profile.html /backstage/profile.asp
 RewriteRule ^backstage/profileSave.html /backstage/profile.asp?action=save
 

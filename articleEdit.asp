@@ -298,7 +298,7 @@ end if
 						</div>
 						
 			
-						<a class='btn btn-primary' href='articleAdd-0-0.html' data-toggle="tooltip" data-original-title="新建文章" target="_blank"><i class='fa fa-plus'></i></a>&nbsp;<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底"><i class="fa fa-arrow-circle-down"></i></a>
+						<a class='btn btn-primary' href='articleAdd-<%=rs("sortId")%>-<%=rs("tagId")%>.html' data-toggle="tooltip" data-original-title="新建文章" target="_blank"><i class='fa fa-plus'></i></a>&nbsp;<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底"><i class="fa fa-arrow-circle-down"></i></a>
 					</div>
 				</div>
 				
@@ -349,9 +349,7 @@ end if
 					rs33.close%>
 					</select>																
 					</div>
-					
-					
-					
+				
 				</div>
 					
 		
