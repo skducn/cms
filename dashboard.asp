@@ -156,7 +156,7 @@ end if
 		
 				<%ip=request.ServerVariables("REMOTE_ADDR")%>
 
-				<a class=" btn btn-info" href="http://172.21.200.153:88" target="_blank" data-toggle="tooltip" data-original-title="http://172.21.200.153:88"><i class="fa fa-list"></i>&nbsp;测试用例集</a>
+				<a class=" btn btn-info" href="http://<%=ip%>:88" target="_blank" data-toggle="tooltip" data-original-title="http://<%=ip%>:88"><i class="fa fa-list"></i>&nbsp;测试用例集</a>
 				
 				<br>	<br>	<br>
 				</div>
