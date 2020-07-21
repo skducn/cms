@@ -1,7 +1,8 @@
 
+git stash
 git pull origin master
 
-d:
+c:
 cd\
 ipconfig /all >ip.txt
 for /f "tokens=2 delims=:(Ê×Ñ¡)" %%b in ('findstr /c:"IPv4 µØÖ·" "ip.txt"') do (
