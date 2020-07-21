@@ -24,3 +24,5 @@ del ip.txt
 "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" %%b
 )
 )
+
+pause
