@@ -1,4 +1,5 @@
 <!--#include file="menu.asp"-->
+<!--#include file="common/function.asp"-->
 
 <title>我的面板 | <%=cstCompany%></title>
 
@@ -153,10 +154,9 @@ end if
 				end if 
 				%>	
 				
-		
-				<%ip=request.ServerVariables("REMOTE_ADDR")%>
+					
 
-				<a class=" btn btn-info" href="http://<%=ip%>:88" target="_blank" data-toggle="tooltip" data-original-title="http://<%=ip%>:88"><i class="fa fa-list"></i>&nbsp;测试用例集</a>
+				<a class=" btn btn-info" href="http://<%=getServerIp()%>:88" target="_blank" data-toggle="tooltip" data-original-title="http://<%=getServerIp()%>:88"><i class="fa fa-list"></i>&nbsp;测试用例集</a>
 				
 				<br>	<br>	<br>
 				</div>
