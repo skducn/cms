@@ -1,4 +1,4 @@
-@echo on
+@echo off
 
 git add .
 
@@ -12,5 +12,3 @@ git push origin master
 
 
 
-
-pause
