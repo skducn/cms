@@ -96,6 +96,7 @@ end if
 			<a href="#" class="mt-3 d-md-none float-right toggle-controls"><span class="material-icons">keyboard_arrow_down</span></a>
 			<h1 class="weight-300 h3 title">仪表盘</h1>
 			<p class="text-muted m-0 desc">Dashboard</p>
+				 <a href="file:///D:/51/" >打开C盘程序文件夹</a>
 		</div> 
 		<div class="col controls-wrapper mt-3 mt-md-0 d-none d-md-block ">
 			<div class="controls d-flex justify-content-center justify-content-md-end">

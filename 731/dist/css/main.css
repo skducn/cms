@@ -6,6 +6,10 @@
 @import url(https://fonts.googleapis.com/css?family=login-contentLato:300,400,400i,700);
 @import url(https://fonts.googleapis.com/css?family=Niconne);
 /*
+.material-half-bg .cover {
+  background-color: #3D59AB;
+  height: 50vh;
+}
  * Bootstrap v3.3.6
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
