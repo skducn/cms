@@ -1,3 +1,6 @@
+@echo off
+
+
 
 git stash
 
@@ -32,6 +35,8 @@ del ip.txt
 
 
 
-"C:\Users\JohnWork\AppData\Local\Google\Chrome\Application\chrome.exe" %%b
+"C:\Program Files\Google\Chrome\Application\chrome.exe" %%b
 )
 )
+
+pause
