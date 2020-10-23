@@ -1,6 +1,7 @@
 @echo off
 
-
+c:
+cd \cms
 git stash
 git pull origin master
 c:
