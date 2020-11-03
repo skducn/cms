@@ -107,10 +107,13 @@ rs.close
 <section class="login-content">
 		
 
+<div class="logo">
+<h1 align="center"><i class="fa fa-book"></i> 测试知识库</h1>
+</div>
+
 	<div class="login-box">
 		<!-- 用户登录 -->	
 		<form action="indexLogin.html" method="post" name="addForm"  class="login-form" onSubmit="return CheckPost()" >
-			<h2 class="login-head"><i class="fa fa-book"></i> 测试知识库</h2>		  		  		              				  
 			<div class="form-group">
 				<h4>用户名</h4>
 				<input class="form-control" type="text" name="userName"  placeholder="username" autofocus>

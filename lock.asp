@@ -73,16 +73,16 @@ end if%>
 <section class="material-half-bg"><div class="cover"></div></section>
 <section class="lockscreen-content">
 
-
-	<div class="logo">
-		<h1 align="center">测试知识库</h1>
-
-	</div>
+<div class="logo">
+<h1 align="center"><i class="fa fa-book"></i> 测试知识库</h1>
+</div>
+	
 	
 	<form action="lockLogin.html" method="post" name="addForm"  class="login-form" onSubmit="return CheckPost()" >
 		<%
 		Set rs4 = Server.CreateObject("Adodb.Recordset")						
 		rs4.Open "select * from tblUser where latestLoginIp='"&getClientIp()&"'",conn,3,3
+		if not rs4.eof then		
 		%>
 		<div class="lock-box">
 			<img src="<%=rs4("userHead")%>" class="img-circle user-image img-thumbnail  ">	
@@ -99,7 +99,12 @@ end if%>
 			</div>
 		 	<p><a href="indexClear-<%=rs4("userName")%>.html">我不是 <%=rs4("userNickname")%> ? 重新登录</a></p>
 		 </div>
-		<%rs4.close
+		 
+		<%
+		else
+			response.Redirect("index.html")		
+		end if 
+		rs4.close
 		set rs4 = nothing%>
 	</form>
 		

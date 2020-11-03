@@ -298,19 +298,23 @@ end if
 		</div>
 	</div>	
 	
+	
+	<form class="form-horizontal" method="post" name="addForm" onSubmit="return CheckPost()" action="dashboardSave.html"> 
+					
 	<div class="row">
 		<div class="col-md-12">		
 			<div class="card">
-					
-					<h3 class="card-title">工作清单</h3>				
-					
-										
-
-				<form class="form-horizontal" method="post" name="addForm" onSubmit="return CheckPost()" action="dashboardSave.html"> 
-		
-					<div align="right"><button type="submit" class="btn btn-primary"  href="#"><i class="fa fa-fw  fa-check-circle"></i>&nbsp;保存</button></div>
-					
 	
+				<div class="row">
+					<div class="col-md-6">
+						<h3 class="card-title">工作清单</h3>
+					</div>
+					
+					<div class="col-md-6" align="right">
+						<button type="submit" class="btn btn-primary"  href="#"><i class="fa fa-fw  fa-check-circle"></i>&nbsp;保存</button>
+					</div>
+				</div>				
+																					
 				<%set rs = server.createobject("adodb.recordset")
 				rs.open "select * from tblUser where userName='"&session("userName")&"'",conn,3,3%>								
 				<script type="text/plain" id="userMemo" style="width:100%; height:300px" name="userMemo"><%=rs("userMemo")%></script>	
@@ -321,11 +325,13 @@ end if
 				<table width="100%" border="0">
 					<tr><td><div align="center"><button type="submit" class="btn btn-primary"  href="#"><i class="fa fa-fw  fa-check-circle"></i>&nbsp;保存 工作清单</button></div></td></tr>
 				</table>						
-				</form>
+			
 
 			</div>
 		</div>	
 	</div>
+	
+	</form>
 	
 	
 	<!-- 查看所有成员的工作清单 -->

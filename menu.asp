@@ -13,14 +13,17 @@
 <link rel="shortcut icon" href="/favicon.ico" /> 
 <link rel="stylesheet" type="text/css" href="731/dist/css/main.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="ueditor/ueditor.config.js"></script>
-<script src="ueditor/ueditor.all.min.js"> </script>	
-<script src="ueditor/lang/zh-cn/zh-cn.js"></script> 
+
+
 
 <script src="731/dist/js/jquery-2.1.4.min.js"></script>
 <script src="731/dist/js/bootstrap.min.js"></script>
 <script src="731/dist/js/plugins/pace.min.js"></script>
 <script src="731/dist/js/main.js"></script>
+
+<script src="ueditor/ueditor.config.js"></script>
+<script src="ueditor/ueditor.all.min.js"> </script>	
+<script src="ueditor/lang/zh-cn/zh-cn.js"></script> 
 
 </head>
 
@@ -372,18 +375,17 @@
 		text: "",
 		type: "warning",
 		showCancelButton: true,
-		confirmButtonText: "我确定",
+		confirmButtonText: "确定",
 		cancelButtonText: "容我三思",
 		closeOnConfirm: false,
 		closeOnCancel: false
 	}, function(isConfirm) {
 		if (isConfirm) {
-			swal("英明的决定", "Bye Bye", "success");
+			swal("再见", "Bye Bye", "success");
 			setTimeout("window.location.href='indexExit.html';",1000); 
 			
 		} else {
-			swal("好样的！继续干活...", "", "success");
-			setTimeout("window.location.href='dashboard.html';",1000); 
+			swal("继续...", "", "success");
 		}
 	});
   });
@@ -393,18 +395,17 @@
 		text: "",
 		type: "warning",
 		showCancelButton: true,
-		confirmButtonText: "我确定",
+		confirmButtonText: "确定",
 		cancelButtonText: "容我三思",
 		closeOnConfirm: false,
 		closeOnCancel: false
 	}, function(isConfirm) {
 		if (isConfirm) {
-			swal("英明的决定", "Bye Bye", "success");
+			swal("再见", "Bye Bye", "success");
 			setTimeout("window.location.href='indexExit.html';",1000); 
 			
 		} else {
-			swal("好样的！继续干活...", "", "success");
-			setTimeout("window.location.href='dashboard.html';",1000); 
+			swal("继续...", "", "success");
 		}
 	});
   });
