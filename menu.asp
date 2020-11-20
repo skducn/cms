@@ -15,7 +15,6 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-
 <script src="731/dist/js/jquery-2.1.4.min.js"></script>
 <script src="731/dist/js/bootstrap.min.js"></script>
 <script src="731/dist/js/plugins/pace.min.js"></script>
@@ -138,14 +137,14 @@
 				<% set rs2 = server.createobject("adodb.recordset")
 				rs2.open "select * from tblTag where sortId="&rs1("sortId")&" and tagState='on' order by tagName asc",conn,3,3		
 				do while not rs2.eof%>
-					<li class="treeview"><a href="#">&omicron;&nbsp;<span> <%=rs2("tagName") %></span><i class="fa fa-angle-right"></i></a>
+					<li class="treeview"><a href="#"><span> <%=rs2("tagName") %></span><i class="fa fa-angle-right"></i></a>
 					<ul class="treeview-menu">                                     
 						 <!-- 遍历标签下的文章 -->
 						<%set rs3 = server.createobject("adodb.recordset")       
 						rs3.open "select * from tblContent where tagId="&rs2("tagId")&" order by cName asc",conn,3,3
 						do while not rs3.eof  
 							if rs3("tagId")=rs2("tagId") then ' 当sub_id是字符类，则使用cstr转换数字为字符串，如cstr(rs7("sub_id")) %> 		  			 
-								<li><span><a href="article-<%=rs3("cId")%>-<%=rs3("sortId")%>.html"  target="_blank">&middot;&nbsp;<%=rs3("cName")%></a></span></li>							
+								<li><span><a href="article-<%=rs3("cId")%>-<%=rs3("sortId")%>.html"  target="_blank">&nbsp;<%=rs3("cName")%></a></span></li>							
 							<%end if
 						rs3.movenext
 						loop 
@@ -178,7 +177,7 @@
 					rs4.movenext
 					loop  
 						for i=1 to ubound(cId)%>
-						<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="article-<%=cId(i)%>-<%=sortId(i)%>.html" target="_blank">&middot;&nbsp;<%=cName(i)%></a></span></li>
+						<li>&nbsp;&nbsp;&nbsp;<span><a href="article-<%=cId(i)%>-<%=sortId(i)%>.html" target="_blank"><%=cName(i)%></a></span></li>
 						<%next
 				end if
 				rs4.close%>	
