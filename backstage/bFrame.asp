@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <link rel="shortcut icon" href=" /favicon.ico" /> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="icon" href="../cosmo/assets/images/favicon.ico">
+<link rel="icon" href="../favicon.ico">
 <link href="../cosmo/assets/css/pages/messages.css" rel="stylesheet">
 <link href="../cosmo/assets/css/basestyle/style.css" rel="stylesheet" >
 <link href="../cosmo/assets/css/daterangepicker/daterangepicker.css" rel="stylesheet" >
@@ -17,6 +17,12 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="../cosmo/assets/css/fontawesome/fontawesome-all.min.css" rel="stylesheet" >
 <link href="../cosmo/assets/css/wysihtml/wmwysiwygeditor.css" rel="stylesheet" >
+
+	<!-- jQuery可变透明度返回顶部代码 -->
+	<link href="../css/67/css/zzsc.css" rel="stylesheet" type="text/css" />
+	<script src="../css/67/js/jquery.min.js"></script>
+	<script src="../css/67/js/zzsc.js"></script> 
+
 </head>
 
 <body>
@@ -310,7 +316,7 @@
               <label title="Knowlage Center"></label>
               <ul>
                  
-						 <li><a href="../dashboard.html"><span class="nav-icon material-icons">keyboard_return</span> 返回前台</a></li>
+						 <li><a href="../dashboard.html"><span class="nav-icon material-icons">keyboard_return</span> 返回</a></li>
 					
 				 
               </ul>

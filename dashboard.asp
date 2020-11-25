@@ -3,6 +3,11 @@
 
 <title>我的面板 | <%=cstCompany%></title>
 
+<!-- top按钮-->
+<link href="test/67/css/zzsc.css" rel="stylesheet" type="text/css" />
+<script src="test/67/js/jquery.min.js"></script>
+<script src="test/67/js/zzsc.js"></script> 
+
 
 <style>
 .buttonJianju a{margin: 2px;}
@@ -298,6 +303,7 @@ end if
 		</div>
 	</div>	
 	
+
 	
 	<form class="form-horizontal" method="post" name="addForm" onSubmit="return CheckPost()" action="dashboardSave.html"> 
 					
@@ -370,6 +376,7 @@ end if
 	
 
 </div>	
+
 
 
    
@@ -448,6 +455,9 @@ end if
 		makeCode(url);
 	}
 </script>  
+
+	<a href="#0" class="cd-top">Top</a>
+
 
 </body>
 </html>

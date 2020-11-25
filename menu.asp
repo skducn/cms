@@ -119,8 +119,9 @@
 			<p><%=rs("userNickName")%></p>
 			<p class="designation"><%=rs("userTitle")%></p>
 		</div>
+		<%rs.close%>	
 	</div>
-		<%rs.close%>		  		  			
+			  		  			
 				 
 		  		  
 		<!-- Sidebar Menu-->

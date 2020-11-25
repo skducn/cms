@@ -11,7 +11,7 @@
 
 <%=bMain%>
 
-<title><%=cstCompany%> | 个人账号</title>        
+<title><%=cstCompany%> | 个人信息</title>        
 
 
 <!--  获取所有用户的昵称，用于新用户中遍历 -->
@@ -187,7 +187,7 @@ end if
 
 						  <hr class="my-4 dashed">
 
-						  <p><span class="weight-400">手机号：</span><span class="text-muted"><%=rs("userPhone")%></span></p>
+						  <p><span class="weight-400">手机：</span><span class="text-muted"><%=rs("userPhone")%></span></p>
 						  <p><span class="weight-400">邮箱：</span><span class="text-muted"><%=rs("userEmail")%></span></p>
 							
 					  </div>
@@ -239,7 +239,7 @@ end if
 					<div class="form-group col-md-12" align="center">						
 						<div id="swfContainer" align="center"></div>
 						<br>	
-						提示：此处有上传头像插件，google浏览器需允许Flash才能显示，请设置chrome://settings/content/flash。
+						提醒：google浏览器需允许Flash才能显示上传头像插件，请设置 <a href="chrome://settings/content/flash">chrome://settings/content/flash</a>
 					</div>
 					
 					
@@ -290,7 +290,7 @@ end if
 					<div class="form-row">
 						<div class="form-group col-md-12">
 				
-						<label for="exampleFormControlTextarea1">个人信息 *</label>
+						<label for="exampleFormControlTextarea1">个人简介 *</label>
 						<textarea class="form-control" name="userInfo" rows="15" required><%=rs("userInfo")%></textarea>
 						</div>
 					</div>

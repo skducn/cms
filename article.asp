@@ -1,15 +1,21 @@
 <!--#include file="menu.asp"-->
 <!--#include file="ajaxMain.asp"-->
 
+<!-- top按钮-->
+<link href="test/67/css/zzsc.css" rel="stylesheet" type="text/css" />
+<script src="test/67/js/jquery.min.js"></script>
+<script src="test/67/js/zzsc.js"></script> 
+
+
 <!-- 用于页面百分比显示1/3 -->
 <style>
 #percentageCounter {
-position: fixed;
-bottom: 30px;
-left: 56%;
+position:fixed;
+bottom: 0px;
+left: 96%;
 }
 h1 {
-font-size: +2em;
+font-size: +1.5em;
 }
 
 .buttonJianju a{margin: 2px;}
@@ -321,19 +327,7 @@ rs.close
 </div>	
 
 
-<!-- 右下角固定top -->
-<link rel="stylesheet" type="text/css" href="top_QRcode/css/common.css">
-<link rel="stylesheet" type="text/css" href="top_QRcode/css/jdc-side-panel.css">
-<div class="jdc-side" style="display: block;">
-<div class="mod_hang_qrcode mod_hang_top"><a href="#" class="mod_hang_qrcode_btn"><i class="jdcfont"></i><span>返回顶部</span></a></div>
-<div class="el-dialog__wrapper" style="display: none;">
-<div class="el-dialog el-dialog--small" style="top: 35%;">
-<div class="el-dialog__header"><span class="el-dialog__title"></span>
-<div type="button" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></div>		
-</div>
-</div>
-</div>
-</div>
+
 
 
 <!-- 用于页面百分比显示3/3  -->
@@ -352,6 +346,7 @@ if (scrollPercent>0) {
 }).trigger('scroll');
 </script>
 
+<a href="#0" class="cd-top">Top</a>
 
 </body>
 </html>

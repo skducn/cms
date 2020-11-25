@@ -2,11 +2,11 @@
 <%=bMain%>
 
 <%if session("userPower") = 1 then%>
-	<title><%=cstCompany%> | 超管设置</title>
+	<title><%=cstCompany%> | 超管仪表盘</title>
 <%elseif session("userPower") = 3 then%>
-	<title><%=cstCompany%> | 管理员设置</title>
+	<title><%=cstCompany%> | 普管仪表盘</title>
 <%else%>
-	<title><%=cstCompany%> | 用户设置</title>
+	<title><%=cstCompany%> | 用户仪表盘</title>
 <%end if %>
 
 
@@ -96,7 +96,6 @@ end if
 			<a href="#" class="mt-3 d-md-none float-right toggle-controls"><span class="material-icons">keyboard_arrow_down</span></a>
 			<h1 class="weight-300 h3 title">仪表盘</h1>
 			<p class="text-muted m-0 desc">Dashboard</p>
-				 <a href="file:///D:/51/" >打开C盘程序文件夹</a>
 		</div> 
 		<div class="col controls-wrapper mt-3 mt-md-0 d-none d-md-block ">
 			<div class="controls d-flex justify-content-center justify-content-md-end">
@@ -151,15 +150,7 @@ end if
 						%>
 					</div>
 					
-						<!-- top按钮 -->
-						<hr>
-						<div class="row">
-							<div class="col-md-2"></div>
-							<div class="col-md-10" align="right">
-								<a href="#top"><button type="text" class="btn btn-info"  data-toggle="tooltip" data-original-title="回页顶"><i class="fa fa-arrow-circle-up"></i></button></a>
-								<a id='DD'></a>
-							</div>
-						</div>
+					
 			
 				</div>
 			</div>
@@ -409,15 +400,7 @@ end if
 						set rs70 = nothing %>		
 					</div>
 					
-						<!-- top按钮 -->
-						<hr>
-						<div class="row">
-							<div class="col-md-2"></div>
-							<div class="col-md-10" align="right">
-								<a href="#top"><button type="text" class="btn btn-info"  data-toggle="tooltip" data-original-title="回页顶"><i class="fa fa-arrow-circle-up"></i></button></a>
-								<a id='DD'></a>
-							</div>
-						</div>
+					
 						
 				</div>
 				
@@ -647,15 +630,7 @@ end if
 							%>		
 						</div>
 						
-							<!-- top按钮 -->
-							<hr>
-							<div class="row">
-								<div class="col-md-2"></div>
-								<div class="col-md-10" align="right">
-									<a href="#top"><button type="text" class="btn btn-info"  data-toggle="tooltip" data-original-title="回页顶"><i class="fa fa-arrow-circle-up"></i></button></a>
-									<a id='DD'></a>
-								</div>
-							</div>	
+						
 						
 					</div>
 				</div>									
@@ -805,7 +780,7 @@ end if
 <script src="../731/dist/js/bootstrap.min.js"></script>
 <script src="../731/dist/js/plugins/pace.min.js"></script>
 
-
+<a href="#0" class="cd-top">Top</a>
 
 </body>
 </html>

@@ -22,6 +22,8 @@ end if
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 <link rel="stylesheet" type="text/css" href="731/dist/css/main.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 <script src="731/dist/js/jquery-2.1.4.min.js"></script>
 <script src="731/dist/js/bootstrap.min.js"></script>
@@ -106,21 +108,17 @@ rs.close
 <section class="material-half-bg"><div class="cover"></div></section>		
 <section class="login-content">
 		
-
-<div class="logo">
-<h1 align="center"><i class="fa fa-book"></i> 测试知识库</h1>
-</div>
-
 	<div class="login-box">
 		<!-- 用户登录 -->	
 		<form action="indexLogin.html" method="post" name="addForm"  class="login-form" onSubmit="return CheckPost()" >
+		<h2 class="login-head"><i class="fa fa-book"></i> 知识库</h2>		
 			<div class="form-group">
 				<h4>用户名</h4>
-				<input class="form-control" type="text" name="userName"  placeholder="username" autofocus>
+				<input class="form-control" type="text" name="userName"  placeholder="USERNAME" autofocus>
 			</div>
 			<div class="form-group">
 				<h4>密码</h4>
-				<input class="form-control" type="password" name="userPass" placeholder="password">
+				<input class="form-control" type="password" name="userPass" placeholder="PASSWORD">
 			</div>
 			<div class="form-group">
 				<div class="utility">
@@ -129,7 +127,8 @@ rs.close
 				</div>
 			</div>
 			<div class="form-group btn-container">
-				<button class="btn btn-primary btn-block" id="button"><h4><i class="fa fa-sign-in fa-lg fa-fw"></i> 登录</h4></button>				
+				<button class="btn btn-primary btn-block" id="button"><h4><i class="fa fa-sign-in fa-lg fa-fw"></i> 登录</h4></button>	
+					<p class="semibold-text mb-0"><a href="http://172.21.200.153:88"><i class="fa fa-area-chart"></i> 测试用例平台</a></p>			
 			</div>
 		
 		</form>
