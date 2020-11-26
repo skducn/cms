@@ -3,7 +3,6 @@
 <!--#include file="common/constant.asp"-->
 <!--#include file="md5.asp"-->
 
-
 <% 
 if request("action")="exit" then
 Session.Abandon()
@@ -20,34 +19,8 @@ end if
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>登录 | <%=cstCompany%></title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-<link rel="stylesheet" type="text/css" href="731/dist/css/main.css">
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+<link rel="stylesheet" href="css/index.css">
 </head>
-<script src="731/dist/js/jquery-2.1.4.min.js"></script>
-<script src="731/dist/js/bootstrap.min.js"></script>
-<script src="731/dist/js/plugins/pace.min.js"></script>
-<script src="731/dist/js/main.js"></script>
-<script type="text/javascript" src="731/dist/js/plugins/bootstrap-notify.min.js"></script>
-<script type="text/javascript" src="731/dist/js/plugins/sweetalert.min.js"></script>
-<script language="javascript">  
-function CheckPost()
-{	  
-     if (addForm.userName.value == "" || addForm.userPass.value == "") 
-	 {
-		$.notify({
-			title: "&nbsp;&nbsp;",
-			message: "用户名或密码不能为空！",
-			icon: 'fa fa-info-circle' 
-		},{
-			type: "danger"
-		});
-	  addForm.userName.focus();
-	  return false;
-  }
-}
-</script>
 
 <!-- 登录 -->
 <% 
@@ -104,51 +77,33 @@ rs.close
 <!-- ******************************************************************************************************************************************************************** -->	
 <body>	 	
 
-			 
-<section class="material-half-bg"><div class="cover"></div></section>		
-<section class="login-content">
-		
-	<div class="login-box">
-		<!-- 用户登录 -->	
-		<form action="indexLogin.html" method="post" name="addForm"  class="login-form" onSubmit="return CheckPost()" >
-		<h2 class="login-head"><i class="fa fa-book"></i> 知识库</h2>		
-			<div class="form-group">
-				<h4>用户名</h4>
-				<input class="form-control" type="text" name="userName"  placeholder="USERNAME" autofocus>
-			</div>
-			<div class="form-group">
-				<h4>密码</h4>
-				<input class="form-control" type="password" name="userPass" placeholder="PASSWORD">
-			</div>
-			<div class="form-group">
-				<div class="utility">
-					<div class="animated-checkbox"></div>
-					<p class="semibold-text mb-0"><a data-toggle="flip">忘记密码？</a></p>
-				</div>
-			</div>
-			<div class="form-group btn-container">
-				<button class="btn btn-primary btn-block" id="button"><h4><i class="fa fa-sign-in fa-lg fa-fw"></i> 登录</h4></button>	
-					<p class="semibold-text mb-0"><a href="http://172.21.200.153:88"><i class="fa fa-area-chart"></i> 测试用例平台</a></p>			
-			</div>
-		
-		</form>
-		
-		<!-- 忘记密码了吗？ -->	
-		<form class="forget-form" action="index.html">
-			<h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>忘记密码了吗？</h3>
-			<div class="form-group">
-				<h4>邮箱认证</h4>
-				<input class="form-control" type="text" placeholder="Email">
-			</div>
-			<div class="form-group btn-container">
-				<button class="btn btn-primary btn-block" id="button2"><h4><i class="fa fa-unlock fa-lg fa-fw"></i> 重置</h4></button>
-			</div>
-			<div class="form-group mt-20">
-				<p class="semibold-text mb-0"><a data-toggle="flip"><i class="fa fa-angle-left fa-fw"></i>返回登录</a></p>
-			</div>
-		</form>		
-	</div>
+<h1>CMS knowledge base</h1>
+<div class="main-agileinfo">
+	<h2>知识库</h2>
+	<form action="indexLogin.html" method="post" >
+		<input type="text" name="userName" class="name" placeholder="用户名" required="required" style="border-radius: 6px;">
+		<input type="password" name="userPass" class="password" placeholder="密码" required="required">
+		<ul>
+		<li>
+		<input type="checkbox" id="brand1" value="">
+		<label for="brand1"><span></span>记住我</label>
+		</li>				
+		</ul>
+		<a href="#">忘记密码？</a><br>
+		<input type="submit" value="登录">
+	</form>
+</div>
+
+<div class="footer-w3l">
+	<p class="agile"><a href="http://172.21.200.153:88/" target="_blank">case 测试用例平台</a></p>
+</div>
+
 	
-</section>
+
+<!--背景图片自动更换-->	
+<script src="js/jquery.min.js"></script>
+<script src="js/supersized.3.2.7.min.js"></script>
+<script src="js/supersized-init.js"></script>
+
 </body>
 </html>

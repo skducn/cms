@@ -12,32 +12,18 @@
 <meta charset="utf-8">
 <link rel="shortcut icon" href=" /favicon.ico" /> 
 <title>快速登录 | <%=cstCompany%></title>
-<link rel="stylesheet" type="text/css" href="731/dist/css/main.css">
+
+<link rel="stylesheet" href="css/index.css">
+
+
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
-<script src="731/dist/js/jquery-2.1.4.min.js"></script>
-<script src="731/dist/js/bootstrap.min.js"></script>
-<script src="731/dist/js/plugins/pace.min.js"></script>
-<script src="731/dist/js/main.js"></script>
-<script type="text/javascript" src="731/dist/js/plugins/bootstrap-notify.min.js"></script>
-<script type="text/javascript" src="731/dist/js/plugins/sweetalert.min.js"></script> 
-<script language="javascript">  
-function CheckPost()
-{	  
-     if (addForm.userPass.value == "") 
-	 {
-		$.notify({
-			title: "&nbsp;&nbsp;",
-			message: "密码不能为空！",
-			icon: 'fa fa-remove' 
-		},{
-			type: "danger"
-		});
-	  addForm.userPass.focus();
-	  return false;
-  }
-}
-</script>
+
+
+</head>
+
 
 <%if request("action") = "login" then
 userPass = md5(request("userPass")) 
@@ -68,46 +54,43 @@ set conn = nothing
 end if%>
 
 <!-- ******************************************************************************************************************************************************************** -->	
-<body onLoad="document.getElementById('inputTxt').focus()">
+<body>
 
-<section class="material-half-bg"><div class="cover"></div></section>
-<section class="lockscreen-content">
 
-<div class="logo">
-<h1 align="center"><i class="fa fa-book"></i> 测试知识库</h1>
-</div>
-	
-	
-	<form action="lockLogin.html" method="post" name="addForm"  class="login-form" onSubmit="return CheckPost()" >
-		<%
+<h1>CMS knowledge base 知识库</h1>
+
+<div class="main-agileinfo">
+	<form action="lockLogin.html" method="post" >
+	<%
 		Set rs4 = Server.CreateObject("Adodb.Recordset")						
 		rs4.Open "select * from tblUser where latestLoginIp='"&getClientIp()&"'",conn,3,3
 		if not rs4.eof then		
 		%>
 		<div class="lock-box">
-			<img src="<%=rs4("userHead")%>" class="img-circle user-image img-thumbnail  ">	
+		<img src="<%=rs4("userHead")%>" class="img-circle user-image">	
+		   
 			<h3 class="text-center user-name"><%=rs4("userNickname")%></h3>
 			<p class="text-center text-muted"><%=rs4("userTitle")%></p>
-			<br>
-			<div class="form-group">			
-				<input class="form-control" name="userPass" type="password" placeholder="password" id="inputTxt">
-				<input name="latestLoginIp" type="hidden" value="<%=getClientIp()%>" >
-				<input name="userName2" type="hidden" value="<%=rs4("userName")%>" >
-			</div>
-			<div class="form-group btn-container">
-				<button class="btn btn-primary btn-block" id="button2" type="submit"><h4><i class="fa fa-unlock fa-lg"></i> 快速登录</h4></button>
-			</div>
-		 	<p><a href="indexClear-<%=rs4("userName")%>.html">我不是 <%=rs4("userNickname")%> ? 重新登录</a></p>
-		 </div>
-		 
+		
+		
+		
+		<input type="password" name="userPass" class="password" placeholder="密码" required="required">
+		<input name="latestLoginIp" type="hidden" value="<%=getClientIp()%>" >
+		<input name="userName2" type="hidden" value="<%=rs4("userName")%>" >		
+		<input type="submit" value="快速登录">
+		<p><a href="indexClear-<%=rs4("userName")%>.html" class="lock11">我不是 <%=rs4("userNickname")%> ? 重新登录</a></p>
 		<%
 		else
 			response.Redirect("index.html")		
 		end if 
 		rs4.close
 		set rs4 = nothing%>
+		</div>
 	</form>
-		
-</section>
+</div>
+
+
+
+
 </body>
 </html>
