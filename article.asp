@@ -1,94 +1,6 @@
 <!--#include file="menu.asp"-->
 <!--#include file="ajaxMain.asp"-->
 
-<!-- top按钮-->
-<link href="test/67/css/zzsc.css" rel="stylesheet" type="text/css" />
-<script src="test/67/js/jquery.min.js"></script>
-<script src="test/67/js/zzsc.js"></script> 
-
-
-<!-- 用于页面百分比显示1/3 -->
-<style>
-#percentageCounter {
-position:fixed;
-bottom: 0px;
-left: 96%;
-}
-h1 {
-font-size: +1.5em;
-}
-
-.buttonJianju a{margin: 2px;}
-.shortkeyb {
-     background-color:#c6c386;
-
-}
-</style>
-
-<script type="text/javascript" src="731/dist/js/plugins/bootstrap-notify.min.js"></script>
-<script language="javascript">  
-function CheckShortAdd()
-{   
-  
-    if (addForm1.keyName.value == "")
-  {
-  	$.notify({
-		title: "&nbsp;&nbsp;",
-		message: "快捷键名称不能为空！",
-		icon: 'fa fa-info-circle' 
-	},{
-		type: "warning"
-	});		
-	  addForm1.keyName.focus();
-	  return false;
-  }
-  
-	if (addForm1.keyLink.value == "")
-  {
-	  $.notify({
-		title: "&nbsp;&nbsp;",
-		message: "快捷键地址URL不能为空！",
-		icon: 'fa fa-info-circl' 
-	},{
-		type: "warning"
-	});	
-	  addForm1.keyLink.focus();
-	  return false;
-  }
-	
-	$.notify({
-		title: "&nbsp;&nbsp;",
-		message: "保存成功",
-		icon: 'fa fa-check' 
-	},{
-		type: "success"
-	});   
-}
-
-	function checkShare()
-	{   	
-	$.notify({
-	title: "&nbsp;&nbsp;",
-	message: "已共享",
-	icon: 'fa fa-check' 
-	},{
-	type: "success"
-	});
-	setTimeout(parent.parent.location.reload(),100000);
-	}
-	function checkNoShare()
-	{   	
-	$.notify({
-	title: "&nbsp;&nbsp;",
-	message: "已取消共享",
-	icon: 'fa fa-check' 
-	},{
-	type: "success"
-	});
-	setTimeout(parent.parent.location.reload(),100000);
-	}
-</script>
-
 
 <!-- 新增快捷键 -->
 
@@ -191,10 +103,26 @@ rs.close
 		<title><%=rs("cName")%> | <%=cstCompany%></title>				
 		
 		<div class="row">
-			<div class="col-md-6">
-				<h3 class="card-title"><%=rs("cName")%></h3>
+			<div class="col-md-4">		
+						
+				<!-- 面包削-->
+				<% set rs1 = server.createobject("adodb.recordset")
+				rs1.open "select * from tblSort where sortId="&rs("sortId")&"" ,conn,3,3      	
+				if rs("tagId")="0" then%>
+				<i class="fa fa-home fa-lg"></i> &rsaquo; <%=rs1("sortName")%>
+				<%else
+				set rs2 = server.createobject("adodb.recordset")			
+				rs2.open "select * from tblTag where tagId="&rs("tagId")&"" ,conn,3,3
+				%> <i class="fa fa-home fa-lg"></i> &rsaquo; <%=rs1("sortName")%> &rsaquo;
+				<a href="searchTag-<%=rs2("tagId")%>.html"><%=rs2("tagName")%></a>
+				<%rs2.close 
+				set rs2 = nothing 
+				end if
+				rs1.close
+				set rs1 = nothing
+				%>												
 			</div>
-			<div class="col-md-6" align="right">							
+			<div class="col-md-8" align="right">							
 				<%set rs7 = server.CreateObject("adodb.recordset")
 				rs7.open "select * from tblKey where userId="&session("userId")&" and keySort=3 order by keyId",conn,3,3 
 				do while not rs7.eof %>
@@ -208,7 +136,7 @@ rs.close
 				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><br><br><br><br><br><br><br><br>
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">								
-							<form action="articleSaveShort.html" method="post" name="addForm1"  class="login-form" onSubmit="return CheckShortAdd()" >		
+							<form action="articleSaveShort.html" method="post" name="addForm1"  class="login-form" onSubmit="return shortcutKeyCheck()" >		
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">×</span>
@@ -254,36 +182,17 @@ rs.close
 		</div> <!-- row end -->
 	
 											
-		<hr><br>   					
+		<hr> 					
 
 		<div class="row">
-			<div class="col-md-9">						
-				<!-- 面包削-->
-				<% set rs1 = server.createobject("adodb.recordset")
-				rs1.open "select * from tblSort where sortId="&rs("sortId")&"" ,conn,3,3      	
-				if rs("tagId")="0" then%>
-				<i class="fa fa-home fa-lg"></i> / <%=rs1("sortName")%>
-				<%else
-				set rs2 = server.createobject("adodb.recordset")			
-				rs2.open "select * from tblTag where tagId="&rs("tagId")&"" ,conn,3,3
-				%> <i class="fa fa-home fa-lg"></i> / <%=rs1("sortName")%> - 
-				<a href="searchTag-<%=rs2("tagId")%>.html"><%=rs2("tagName")%></a>
-				<%rs2.close 
-				set rs2 = nothing 
-				end if
-				rs1.close
-				set rs1 = nothing
-				%>												
-			</div>
-							
-			<div class="col-md-3" align="right">
-				更新时间：
+				
+			<div class="col-md-12">						
+				<h3 class="card-title"><%=rs("cName")%></h3>		
 				<%if rs("cLatestDate") <> "" then%>
-					<%=rs("cLatestDate")%>
+					创建于：<%=rs("cLatestDate")%>
 				<%else%>
-					<%=rs("cCrtDate")%>								
-				<%end if %>
-			</div>
+					创建于：<%=rs("cCrtDate")%>								
+				<%end if %>																					
 					
 			<!-- 文章转移 三联动 -->	
 			<% if session("userName")= rs("userName") then %>																								
@@ -291,12 +200,13 @@ rs.close
 				<div id="ajaxTagDiv"></div>
 				<div id="ajaxInfoDiv"></div>						
 			<%end if %>	
+			</div>
 		</div> <!-- row end -->					
 						
 		<!-- 文章内容 -->
 		<br><%=rs("cContent")%><br>
 																		
-		<hr><br>					
+		<hr>					
 						
 		<div class="row">
 			<div class="col-md-6">
@@ -329,24 +239,21 @@ rs.close
 
 
 
-
-<!-- 用于页面百分比显示3/3  -->
-<script>
-$(window).scroll(function(){
-//Window Math
-var scrollTo = $(window).scrollTop(),
-docHeight = $(document).height(),
-windowHeight = $(window).height();
-scrollPercent = (scrollTo / (docHeight-windowHeight)) * 100;
-scrollPercent = scrollPercent.toFixed(0);
-if (scrollPercent>0) {
-  $('#percentageCounter h1').text(scrollPercent+"%");
-}
-
-}).trigger('scroll');
-</script>
-
-<a href="#0" class="cd-top">Top</a>
-
 </body>
 </html>
+
+<!-- top -->
+<a href="#0" class="cd-top">Top</a>
+
+
+<!-- 用于页面百分比显示1/3 -->
+<link href="js/percent/percent.css" rel="stylesheet" type="text/css" />
+<script src="js/percent/percent.js"></script>
+
+
+<!-- 左侧菜单，放在每个页面底部-->
+<script src="js/menu/jquery-2.1.4.min.js"></script>
+<script src="js/menu/bootstrap.min.js"></script>
+<script src="js/menu/plugins/pace.min.js"></script>
+<script src="js/menu/main.js"></script>
+<script src="js/shortcutKey/bootstrap-notify.min.js"></script>

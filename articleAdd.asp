@@ -11,145 +11,7 @@ end if
 rs4.close%>
 
 
-<!-- Select2 -->
-<script src="731/dist/js/select2/select2.full.min.js"></script>
-<script>
-$(function () {
-//Initialize Select2 Elements
-$(".select2").select2();
-$(".select4").select4();
-});
-</script>
 
-<script language="JavaScript">
-<!-- 功能：二级联动，选择类别，然后选择标签
-<%
-'二级数据保存到数组
-Dim count2,rsClass2,sqlClass2
-set rsClass2=server.createobject("adodb.recordset")
-sqlClass2="select * from tblTag where tagState='on' order by tagName" 
-rsClass2.open sqlClass2,conn,1,1
-%>
-var subval2 = new Array();
-//数组结构：一级根值,二级根值,二级显示值
-<%
-count2 = 0
-do while not rsClass2.eof
-%>
-subval2[<%=count2%>] = new Array('<%=rsClass2("sortId")%>','<%=rsClass2("tagId")%>','<%=rsClass2("tagName")%>')
-<%
-count2 = count2 + 1
-rsClass2.movenext
-loop
-rsClass2.close
-%>
-function changeselect1(locationid)
-{
-if (document.addForm.tagIdOld.value == "")
-{
-document.addForm.tagIdOld.value= 0;
-}
-document.addForm.tagIdOld.length = 0;
-document.addForm.tagIdOld.options[0] = new Option('/ ','0');
-for (i=0; i<subval2.length; i++)
-{
-if (subval2[i][0] == locationid)
-{document.addForm.tagIdOld.options[document.addForm.tagIdOld.length] = new Option(subval2[i][2],subval2[i][1]);}
-}
-}
-//-->
-</script>
-
-<script language="javascript">  
-function CheckShortAdd()
-{   
-  
-    if (addForm1.keyName.value == "")
-  {
-  	$.notify({
-		title: "温馨提示： ",
-		message: "快捷键名称不能为空！",
-		icon: 'fa fa-check' 
-	},{
-		type: "warning"
-	});		
-	  addForm1.keyName.focus();
-	  return false;
-  }
-  
-	if (addForm1.keyLink.value == "")
-  {
-	  $.notify({
-		title: "温馨提示： ",
-		message: "快捷键地址URL不能为空！",
-		icon: 'fa fa-check' 
-	},{
-		type: "warning"
-	});	
-	  addForm1.keyLink.focus();
-	  return false;
-  }
-	
-	$.notify({
-		title: "&nbsp;&nbsp;",
-		message: "保存成功",
-		icon: 'fa fa-check' 
-	},{
-		type: "success"
-	});   
-}
-
-function CheckPost()
-{
-       	  
-  if (addForm.sortId.value == "")
-  {	      
-	$.notify({
-		title: "&nbsp;&nbsp;",
-		message: "文章类别不能为空！",
-		icon: 'fa fa-remove' 
-	},{
-		type: "danger"
-	});			  	  
-	  addForm.sortId.focus();
-	  return false;
-  }
-  
-    if (addForm.cName.value == "")
-  {
-  	$.notify({
-		title: "&nbsp;&nbsp;",
-		message: "文章标题不能为空！",
-		icon: 'fa fa-remove' 
-	},{
-		type: "danger"
-	});		
-	  addForm.cName.focus();
-	  return false;
-  }
-  
-	if (addForm.cContent.value == "")
-  {
-	  $.notify({
-		title: "&nbsp;&nbsp;",
-		message: "文章内容不能为空",
-		icon: 'fa fa-remove' 
-	},{
-		type: "danger"
-	});	
-	  addForm.cContent.focus();
-	  return false;
-  }
-
-		$.notify({
-		title: "&nbsp;&nbsp;",
-		message: "提交成功",
-		icon: 'fa fa-check' 
-	},{
-		type: "success"
-	});
-}
-</script>
 
 <!-- 新增快捷键 -->
 
@@ -294,7 +156,7 @@ end if
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">	
 							
-							<form action="articleAddSaveShort.html" method="post" name="addForm1"  class="login-form" onSubmit="return CheckShortAdd()" >		
+							<form action="articleAddSaveShort.html" method="post" name="addForm1"  class="login-form" onSubmit="return shortcutKeyCheck()" >		
 								<div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">×</span>
@@ -327,7 +189,7 @@ end if
 		</div>
 				
 		<hr>
-		<form class="form-horizontal" method="post" name="addForm" onSubmit="return CheckPost()" action="articleAddSave.html">  
+		<form class="form-horizontal" method="post" name="addForm" onSubmit="return articleCheck()" action="articleAddSave.html">  
 								         							
 		<div class="form-group">
 			<!-- 类别 -->	
@@ -338,7 +200,8 @@ end if
 			
 					<div class="col-md-2">
 					  <select name="sortId" class="form-control select2" onChange="changeselect1(this.value)">
-					 
+					 			
+
 						<%'遍历类别名	
 						set rs6 = server.CreateObject("adodb.recordset")
 						
@@ -461,3 +324,44 @@ end if
 </body>
 </html>
 
+
+
+<!-- 左侧菜单，放在每个页面底部-->
+<script src="js/menu/jquery-2.1.4.min.js"></script>
+<script src="js/menu/bootstrap.min.js"></script>
+<script src="js/menu/plugins/pace.min.js"></script>
+<script src="js/menu/main.js"></script>
+<script  src="js/shortcutKey/bootstrap-notify.min.js"></script>
+
+<!-- 下拉框效果 -->
+<script src="js/dropDownList/select2.full.min.js"></script>
+
+<!-- 功能：二级联动，选择类别，然后选择标签 -->
+<script>
+$(function () {
+//Initialize Select2 Elements
+$(".select2").select2();
+$(".select4").select2();
+});
+<%
+'二级数据保存到数组
+Dim count2,rsClass2,sqlClass2
+set rsClass2=server.createobject("adodb.recordset")
+sqlClass2="select * from tblTag where tagState='on' order by tagName" 
+rsClass2.open sqlClass2,conn,1,1 %>
+var subval2 = new Array();
+//数组结构：一级根值,二级根值,二级显示值
+<% count2 = 0
+do while not rsClass2.eof %>
+subval2[<%=count2%>] = new Array('<%=rsClass2("sortId")%>','<%=rsClass2("tagId")%>','<%=rsClass2("tagName")%>')
+<% count2 = count2 + 1
+rsClass2.movenext
+loop
+rsClass2.close %>
+function changeselect1(locationid)
+{ if (document.addForm.tagIdOld.value == ""){document.addForm.tagIdOld.value= 0;}
+document.addForm.tagIdOld.length = 0;
+document.addForm.tagIdOld.options[0] = new Option('/ ','0');
+for (i=0; i<subval2.length; i++){
+if (subval2[i][0] == locationid){document.addForm.tagIdOld.options[document.addForm.tagIdOld.length] = new Option(subval2[i][2],subval2[i][1]);}}}
+</script>

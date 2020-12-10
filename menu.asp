@@ -1,6 +1,6 @@
 <!--#include file="conn.asp"-->
-<!--#include file="common/function.asp"-->
-<!--#include file="common/constant.asp"-->
+<!--#include file="function.asp"-->
+<!--#include file="constant.asp"-->
 <%exitIndex()%>
 
 
@@ -15,14 +15,6 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<script src="731/dist/js/jquery-2.1.4.min.js"></script>
-<script src="731/dist/js/bootstrap.min.js"></script>
-<script src="731/dist/js/plugins/pace.min.js"></script>
-<script src="731/dist/js/main.js"></script>
-
-<script src="ueditor/ueditor.config.js"></script>
-<script src="ueditor/ueditor.all.min.js"> </script>	
-<script src="ueditor/lang/zh-cn/zh-cn.js"></script> 
 
 </head>
 
@@ -264,7 +256,7 @@
 									set rs7 = server.createobject("adodb.recordset")   	  	  
 									rs7.open "select * from tblContent where sortId="&rs5("sortId")&" and tagId=0 order by cName,cId asc",conn,3,3
 									do while not rs7.eof%>							
-									<li>	<span><a href="article-<%=rs7("cId")%>-<%=rs5("sortId")%>.html" target="_blank">&omicron;&nbsp;<%=rs7("cName")%></a>				</span></li>
+									<li>	<span><a href="articleOther-<%=rs7("cId")%>-<%=rs5("sortId")%>.html" target="_blank">&omicron;&nbsp;<%=rs7("cName")%></a>				</span></li>
 									<%rs7.movenext
 									loop
 									rs7.close
@@ -276,7 +268,7 @@
 											set rs7 = server.createobject("adodb.recordset")   	  	  
 											rs7.open "select * from tblContent where sortId="&rs5("sortId")&" and tagId="&rs6("tagId")&" order by cName,cId asc",conn,3,3
 											do while not rs7.eof%>							
-											<li><span><a href="article-<%=rs7("cId")%>-<%=rs5("sortId")%>.html" target="_blank"><%=rs7("cName")%></a></span></li>
+											<li><span><a href="articleOther-<%=rs7("cId")%>-<%=rs5("sortId")%>.html" target="_blank"><%=rs7("cName")%></a></span></li>
 											<%rs7.movenext
 											loop
 											rs7.close
@@ -309,7 +301,7 @@
 											set rs17 = server.createobject("adodb.recordset")   	  	  
 											rs17.open "select * from tblContent where sortId="&rs15("sortId")&" and tagId="&rs16("tagId")&" order by cName,cId asc",conn,3,3
 											do while not rs17.eof%>							
-											<li>	<span><a href="article-<%=rs17("cId")%>-<%=rs15("sortId")%>.html" target="BoardList"><%=rs17("cName")%></a>				</span></li>
+											<li>	<span><a href="articleOther-<%=rs17("cId")%>-<%=rs15("sortId")%>.html" target="BoardList"><%=rs17("cName")%></a>				</span></li>
 											<%rs17.movenext
 											loop
 											rs17.close
@@ -331,7 +323,7 @@
 					if not rs11.eof then 
 						do while not rs11.eof %>
 							
-							<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="article-<%=rs11("cId")%>-<%=rs11("sortId")%>.html"  target="BoardList">&middot;&nbsp;<%=rs11("cName")%></a></span></li>
+							<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="articleOther-<%=rs11("cId")%>-<%=rs11("sortId")%>.html"  target="BoardList">&middot;&nbsp;<%=rs11("cName")%></a></span></li>
 							
 						<% 
 						rs11.movenext
@@ -364,52 +356,31 @@
 	</aside>
 
 
-	
-<script type="text/javascript" src="731/dist/js/plugins/bootstrap-notify.min.js"></script>
-<script type="text/javascript" src="731/dist/js/plugins/sweetalert.min.js"></script>
-<script type="text/javascript">
+<!-- 百度编辑器--> 
+<script src="ueditor/ueditor.config.js"></script>
+<script src="ueditor/ueditor.all.min.js"> </script>	
+<script src="ueditor/lang/zh-cn/zh-cn.js"></script> 
 
-  $('#demoExit').click(function(){
-	swal({
-		title: "是否退出系统?",
-		text: "",
-		type: "warning",
-		showCancelButton: true,
-		confirmButtonText: "确定",
-		cancelButtonText: "容我三思",
-		closeOnConfirm: false,
-		closeOnCancel: false
-	}, function(isConfirm) {
-		if (isConfirm) {
-			swal("再见", "Bye Bye", "success");
-			setTimeout("window.location.href='indexExit.html';",1000); 
-			
-		} else {
-			swal("继续...", "", "success");
-		}
-	});
-  });
-  $('#demoExit1').click(function(){
-	swal({
-		title: "是否退出系统?",
-		text: "",
-		type: "warning",
-		showCancelButton: true,
-		confirmButtonText: "确定",
-		cancelButtonText: "容我三思",
-		closeOnConfirm: false,
-		closeOnCancel: false
-	}, function(isConfirm) {
-		if (isConfirm) {
-			swal("再见", "Bye Bye", "success");
-			setTimeout("window.location.href='indexExit.html';",1000); 
-			
-		} else {
-			swal("继续...", "", "success");
-		}
-	});
-  });
-</script>	
+<!-- 退出弹框效果 -->
+<script src="js/exit/jquery-2.1.4.min.js"></script>	
+<script type="text/javascript" src="js/exit/bootstrap-notify.min.js"></script>
+<script type="text/javascript" src="js/exit/sweetalert.min.js"></script>
+<script type="text/javascript" src="js/exit/custom.js"></script>
 
+<!-- top按钮 cd-top-arrow.svg箭头-->
+<link href="js/topButton/zzsc.css" rel="stylesheet" type="text/css" />
+<script src="js/topButton/jquery.min.js"></script>
+<script src="js/topButton/zzsc.js"></script> 
+
+<!-- 快捷鍵列表 -->
+<link href="js/shortcutKey/custom.css" rel="stylesheet" type="text/css" />
+
+
+<!-- 表单提交校验 -->
+<script src="js/check.js"></script>
+
+<!-- 表格 -->
+<script  src="js/table/jquery.dataTables.min.js"></script>
+<script  src="js/table/dataTables.bootstrap.min.js"></script>
 
 

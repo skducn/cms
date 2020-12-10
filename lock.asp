@@ -1,6 +1,6 @@
 ﻿<!--#include file="conn.asp"-->
-<!--#include file="common/function.asp"-->
-<!--#include file="common/constant.asp"-->
+<!--#include file="function.asp"-->
+<!--#include file="constant.asp"-->
 <!--#include file="md5.asp"-->
 
 <!DOCTYPE html>

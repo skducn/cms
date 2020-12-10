@@ -2,9 +2,7 @@
 
 <title>╠Ю╪╜ндуб | <%=cstCompany%></title>
 
-<%
 
-%>
 
 <div class="content-wrapper">
 	<div class="row">

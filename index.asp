@@ -1,6 +1,6 @@
 ﻿<!--#include file="conn.asp"-->
-<!--#include file="common/function.asp"-->
-<!--#include file="common/constant.asp"-->
+<!--#include file="function.asp"-->
+<!--#include file="constant.asp"-->
 <!--#include file="md5.asp"-->
 
 <% 
@@ -74,7 +74,7 @@ end if
 rs.close
 %>
 
-<!-- ******************************************************************************************************************************************************************** -->	
+<!-- ********************************************************************************************************************************** -->	
 <body>	 	
 
 <h1>CMS knowledge base</h1>
@@ -98,12 +98,11 @@ rs.close
 	<p class="agile"><a href="http://172.21.200.153:88/" target="_blank">case 测试用例平台</a></p>
 </div>
 
-	
-
-<!--背景图片自动更换-->	
-<script src="js/jquery.min.js"></script>
-<script src="js/supersized.3.2.7.min.js"></script>
-<script src="js/supersized-init.js"></script>
-
 </body>
 </html>
+
+<!--背景图片自动更换-->	
+<script src="js/background/jquery.min.js"></script>
+<script src="js/background/supersized.3.2.7.min.js"></script>
+<script src="js/background/supersized-init.js"></script>
+

@@ -30,6 +30,7 @@ RewriteRule ^articleAdd-(.*)-(.*).html /articleAdd.asp?sortId=$1&tagId=$2
 RewriteRule ^articleAddSave.html /articleAdd.asp?action=save
 RewriteRule ^articleAddSaveShort.html /articleAdd.asp?action=saveShort
 RewriteRule ^article-(.*)-(.*).html /article.asp?cId=$1&sortId=$2
+RewriteRule ^articleOther-(.*)-(.*).html /articleOther.asp?cId=$1&sortId=$2
 RewriteRule ^articleSaveShort.html /article.asp?action=saveShort
 
 RewriteRule ^articleEdit-(.*).html /articleEdit.asp?cId=$1

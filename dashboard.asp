@@ -1,69 +1,6 @@
 <!--#include file="menu.asp"-->
-<!--#include file="common/function.asp"-->
 
 <title>我的面板 | <%=cstCompany%></title>
-
-<!-- top按钮-->
-<link href="test/67/css/zzsc.css" rel="stylesheet" type="text/css" />
-<script src="test/67/js/jquery.min.js"></script>
-<script src="test/67/js/zzsc.js"></script> 
-
-
-<style>
-.buttonJianju a{margin: 2px;}
-.shortkeyb {
-     background-color:#c6c386;
-
-}
-</style>
-
-
-<script type="text/javascript" src="731/dist/js/plugins/bootstrap-notify.min.js"></script>
-<script language="javascript">  
-
-function CheckShortAdd()
-{   
-  
-    if (addForm1.keyName.value == "")
-  {
-  	$.notify({
-		title: "温馨提示： ",
-		message: "快捷键名称不能为空！",
-		icon: 'fa fa-check' 
-	},{
-		type: "warning"
-	});		
-	  addForm1.keyName.focus();
-	  return false;
-  }
-  
-	if (addForm1.keyLink.value == "")
-  {
-	  $.notify({
-		title: "温馨提示： ",
-		message: "快捷键地址URL不能为空！",
-		icon: 'fa fa-check' 
-	},{
-		type: "warning"
-	});	
-	  addForm1.keyLink.focus();
-	  return false;
-  }
-	
-  
-}
-
-function CheckPost()
-{   	
-	$.notify({
-		title: "&nbsp;&nbsp;",
-		message: "保存成功",
-		icon: 'fa fa-check' 
-	},{
-		type: "success"
-	});
-}
-</script>
 
 
 <!-- 新增快捷键 -->
@@ -181,7 +118,7 @@ end if
 						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><br><br><br><br><br><br><br><br>
 						<div class="modal-dialog" role="document">
 						<div class="modal-content">											
-							<form action="dashboardSaveShort.html" method="post" name="addForm1"  class="login-form" onSubmit="return CheckShortAdd()" >		
+							<form action="dashboardSaveShort.html" method="post" name="addForm1"  class="login-form" onSubmit="return shortcutKeyCheck()" >		
 							<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">×</span>
@@ -238,7 +175,7 @@ end if
 			<div class="card">
 				<div class="card-body">
 					<h3 class="card-title">最近新增的文章</h3>
-					<table class="table table-hover table-bordered" id="sampleTable">
+					<table class="table table-hover table-bordered" id="dashboard_addArticle">
 					<thead><tr>
 					<th style="width: 20%">类别名称</th>
 					<th style="width: 50%">文章名称</th>
@@ -272,7 +209,7 @@ end if
 			<div class="card">
 				<div class="card-body">
 					<h3 class="card-title">最近编辑的文章</h3>
-					<table class="table table-hover table-bordered" id="sampleTable2">
+					<table class="table table-hover table-bordered" id="dashboard_editArticle">
 					<thead><tr>
 					<th style="width: 20%">类别名称</th>
 					<th style="width: 50%">文章名称</th>
@@ -305,7 +242,7 @@ end if
 	
 
 	
-	<form class="form-horizontal" method="post" name="addForm" onSubmit="return CheckPost()" action="dashboardSave.html"> 
+	<form class="form-horizontal" method="post" name="addForm" onSubmit="return saveSuccess()" action="dashboardSave.html"> 
 					
 	<div class="row">
 		<div class="col-md-12">		
@@ -377,90 +314,45 @@ end if
 
 </div>	
 
-
-
-   
-<!-- table-->
-<script type="text/javascript" src="731/dist/js/plugins/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="731/dist/js/plugins/dataTables.bootstrap.min.js"></script>
-<script type="text/javascript">$('#sampleTable').DataTable({
-//跟数组下标一样，第一列从0开始，这里表格初始化时，第四列默认降序
-//"aLengthMenu": [[10, 25, 50, -1], [10,25,50,"All"]],
-"order": [[ 2, "desc" ]],
-"aLengthMenu": [[10, 25, 50], [10,25,50]],
-"oLanguage": {
-"sSearch": "搜索：",
-"sLengthMenu": "每页显示 _MENU_ 条记录",
-"sZeroRecords": "抱歉， 没有找到",
-"sInfo": "_END_ / _TOTAL_ 条数据",
-"sInfoEmpty": "没有数据",
-"sInfoFiltered": "(从 _MAX_ 条数据中检索)",
-"oPaginate": {
-"sFirst": "首页",
-"sPrevious": "前",
-"sNext": "后",
-"sLast": "尾页"
-},
-"sZeroRecords": "没有检索到数据",
-"sProcessing": "<img src='./loading.gif' />"
-}
-
-} );</script>
-
-
-<script type="text/javascript">$('#sampleTable2').DataTable({
-//跟数组下标一样，第一列从0开始，这里表格初始化时，第四列默认降序
-"order": [[ 2, "desc" ]],
-"aLengthMenu": [[10, 25, 50], [10,25,50]],
-"oLanguage": {
-"sSearch": "搜索：",
-"sLengthMenu": "每页显示 _MENU_ 条记录",
-"sZeroRecords": "抱歉， 没有找到",
-"sInfo": "_END_ / _TOTAL_ 条数据",
-"sInfoEmpty": "没有数据",
-"sInfoFiltered": "(从 _MAX_ 条数据中检索)",
-"oPaginate": {
-"sFirst": "首页",
-"sPrevious": "前",
-"sNext": "后",
-"sLast": "尾页"
-},
-"sZeroRecords": "没有检索到数据",
-"sProcessing": "<img src='./loading.gif' />"
-}
-
-} );</script>
-
-
-<!-- QRcode 扫二维码，打开网页 -->
-<script src="QRcode/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="QRcode/qrcode.js"></script>
-<script type="text/javascript" src="QRcode/utf.js"></script>
-<script type="text/javascript" src="QRcode/jquery.qrcode.js" ></script>
-<script type="text/javascript">
-	function makeCode(url) {
-		var ip = "http://<% =getServerIp()%>"
-		$("#qrcode").qrcode({
-			render: "canvas",
-			text: ip,
-			width : "80",               //二维码的宽度
-			height : "80",              //二维码的高度
-			background : "#ffffff",       //二维码的后景色
-			foreground : "#000000",        //二维码的前景色
-			src: 'QRcode/logo.png'             //二维码中间的图片
-		});
-	}
-	function createQrcode () {
-		var url = '';//$('#url').val();
-		makeCode(url);
-	}
-</script>  
-
-	<a href="#0" class="cd-top">Top</a>
-
-
 </body>
-</html>
+</html>	
 
 
+<!-- top -->
+<a href="#0" class="cd-top">Top</a>
 
+
+<!-- 表格 -->
+<script  src="js/table/custom.js"></script>
+
+
+<!-- 左侧菜单，放在每个页面底部-->
+<script src="js/menu/jquery-2.1.4.min.js"></script>
+<script src="js/menu/bootstrap.min.js"></script>
+<script src="js/menu/plugins/pace.min.js"></script>
+<script src="js/menu/main.js"></script>
+<script  src="js/shortcutKey/bootstrap-notify.min.js"></script>
+
+
+<!-- QRcode 扫二维码，打开网页 <script src="js/QRcode/jquery-2.1.4.min.js"></script>-->
+<script src="js/QRcode/qrcode.js"></script>
+<script src="js/QRcode/utf.js"></script>
+<script src="js/QRcode/jquery.qrcode.js" ></script>
+<script >
+function makeCode(url) {
+var ip = "http://<% =getServerIp()%>"
+$("#qrcode").qrcode({
+render: "canvas",
+text: ip,
+width : "80",               //二维码的宽度
+height : "80",              //二维码的高度
+background : "#ffffff",       //二维码的后景色
+foreground : "#000000",        //二维码的前景色
+src: 'QRcode/logo.png'             //二维码中间的图片
+});
+}
+function createQrcode () {
+var url = '';//$('#url').val();
+makeCode(url);
+}
+</script> 

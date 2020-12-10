@@ -1,3 +1,7 @@
+上传头像 fullAvatarEditor-2.0.zip 富头像上传编辑器
+http://www.mycodes.net/23/5779.htm
+fullAvatarEditor.7z  
+
 asp上传头像
 
 1，将upload目录放在网站的根目录
