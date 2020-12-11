@@ -1,5 +1,4 @@
 <!--#include file="bFrame.asp"-->
-<!--#include file="../common/constant.asp"-->
 <%=bMain%>
 
 <title><%=cstCompany%> | 新建类别</title>

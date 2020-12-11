@@ -13,9 +13,7 @@
 <link rel="shortcut icon" href=" /favicon.ico" /> 
 <title>快速登录 | <%=cstCompany%></title>
 
-<link rel="stylesheet" href="css/index.css">
-
-
+<link rel="stylesheet" href="js/index.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 

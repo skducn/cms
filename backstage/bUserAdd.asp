@@ -1,6 +1,4 @@
 <!--#include file="bFrame.asp"-->
-<!--#include file="../md5.asp"-->
-<!--#include file="../common/constant.asp"-->
 <%=bMain%>
 
 <title><%=cstCompany%> | 新增组员</title>

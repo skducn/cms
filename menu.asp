@@ -11,7 +11,7 @@
 <link rel="shortcut icon" href=" /favicon.ico" /> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="/favicon.ico" /> 
-<link rel="stylesheet" type="text/css" href="731/dist/css/main.css">
+<link rel="stylesheet" type="text/css" href="js/main.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -55,7 +55,7 @@
 							rs2.open "select * from tblUser where userName='"&rs1("userName")&"'",conn,3,3  
 							if datediff("d",rs1("cShareDate"),date()) < 5 then
 								%>					
-								<li><a class="media" href="article-<%=rs1("cId")%>-<%=rs1("sortId")%>.html">
+								<li><a class="media" href="articleOther-<%=rs1("cId")%>-<%=rs1("sortId")%>.html">
 								<span class="media-left media-icon"><span class="fa-stack fa-lg">
 								<%if rs2("userPower") = 3 then%>
 									<i class="fa fa-circle fa-stack-2x text-danger"></i><i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i></span></span>

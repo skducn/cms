@@ -1,6 +1,8 @@
 <!--#include file="../conn.asp"-->
-<!--#include file="../common/constant.asp"-->
-<!--#include file="../common/function.asp"-->
+<!--#include file="../constant.asp"-->
+<!--#include file="../function.asp"-->
+<!--#include file="../md5.asp"-->
+
 <% bMain()%>
 
 <!DOCTYPE html>
@@ -10,18 +12,11 @@
 <link rel="shortcut icon" href=" /favicon.ico" /> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="icon" href="../favicon.ico">
-<link href="../cosmo/assets/css/pages/messages.css" rel="stylesheet">
-<link href="../cosmo/assets/css/basestyle/style.css" rel="stylesheet" >
-<link href="../cosmo/assets/css/daterangepicker/daterangepicker.css" rel="stylesheet" >
-<link href="../cosmo/assets/css/fullcalendar/fullcalendar.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="../cosmo/assets/css/fontawesome/fontawesome-all.min.css" rel="stylesheet" >
-<link href="../cosmo/assets/css/wysihtml/wmwysiwygeditor.css" rel="stylesheet" >
 
-	<!-- jQuery可变透明度返回顶部代码 -->
-	<link href="../css/67/css/zzsc.css" rel="stylesheet" type="text/css" />
-	<script src="../css/67/js/jquery.min.js"></script>
-	<script src="../css/67/js/zzsc.js"></script> 
+<link href="js/style.css" rel="stylesheet" >
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="js/fontawesome/fontawesome-all.min.css" rel="stylesheet" >
+
 
 </head>
 
@@ -375,17 +370,20 @@
 			set rs = nothing%>
 
 
+<!-- top按钮 cd-top-arrow.svg箭头-->
+<link href="../js/topButton/zzsc.css" rel="stylesheet" type="text/css" />
+<script src="../js/topButton/jquery.min.js"></script>
+<script src="../js/topButton/zzsc.js"></script> 
 
 
-<script src="../cosmo/assets/js/lib/moment.min.js"></script>
-<script src="../cosmo/assets/js/lib/jquery.min.js"></script>
-<script src="../cosmo/assets/js/lib/popper.min.js"></script>
-<script src="../cosmo/assets/js/bootstrap/bootstrap.min.js"></script>
-<script src="../cosmo/assets/js/chosen-js/chosen.jquery.js"></script>
-<script src="../cosmo/assets/js/custom.js"></script>
-
-<script src="../cosmo/assets/js/fullcalendar/fullcalendar.js"></script>
-<script src="../cosmo/assets/js/daterangepicker/daterangepicker.min.js"></script>
+<script src="js/lib/moment.min.js"></script>
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/popper.min.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/chosen-js/chosen.jquery.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/fullcalendar/fullcalendar.js"></script>
+<script src="js/daterangepicker/daterangepicker.min.js"></script>
 
 
 

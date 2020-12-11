@@ -1,5 +1,4 @@
 <!--#include file="bFrame.asp"-->
-<!--#include file="../common/constant.asp"-->
 <%=bMain%>
 
 <title><%=cstCompany%> | 新建标签</title>
@@ -156,7 +155,7 @@ set rs1 = nothing
 								<%end if
 							else 
 								if rs("tagShare") = "off" then%>
-									<td><a href="bTagEdit-=<%=sortId%>-<%=rs("tagId")%>.html"><%=rs("tagName")%></a></td><td><span class="badge badge-info">开启</span></td><td><span class="badge badge-danger">关闭</span>	</td>																	
+									<td><a href="bTagEdit-<%=sortId%>-<%=rs("tagId")%>.html"><%=rs("tagName")%></a></td><td><span class="badge badge-info">开启</span></td><td><span class="badge badge-danger">关闭</span>	</td>																	
 								<%else%>
 									<td><a href="bTagEdit-<%=sortId%>-<%=rs("tagId")%>.html"><%=rs("tagName")%></a></td><td><span class="badge badge-info">开启</span></td><td><span class="badge badge-info">开启</span>	</td>
 								<%end if 

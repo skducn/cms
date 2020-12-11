@@ -10,29 +10,6 @@
 <%end if %>
 
 
-<script language="javascript">
-function CheckPost()
-{
-	// 快捷名称
-	if (addForm.keyName.value == ""){
-		alert("温馨提示，快捷名称不能为空！", function () {}, {type: 'warning', confirmButtonText: '确定'});
-		addForm.keyName.focus();
-		return false;}	
-	// 快捷链接
-	if (addForm.keyLink.value == ""){
-		alert("温馨提示，快捷链接不能为空！", function () {}, {type: 'warning', confirmButtonText: '确定'});
-		addForm.keyLink.focus();
-		return false;}
-	
-	var gnl=confirm("确定要提交?");
-	if (gnl==true){
-		return true;}
-	else{
-		return false;}
-
-}
- 
-</script>
 
 
 <!-- 删除文章 -->
@@ -111,7 +88,7 @@ end if
 				<div class="card-header">						
 					<div class="alert alert-primary" role="alert">我的面板之新增快捷键 / 所有页面之编辑快捷键</div>
 					<div class="card-body">	
-						<form method="post" name="addForm" onSubmit="return CheckPost()">   
+						<form method="post" name="addForm" onSubmit="return dashboardCheck()">   
 						<div class="form-row">
 							<div class="form-group col-md-4">
 								<label>快捷名称 *（1-15）</label>
@@ -764,23 +741,26 @@ end if
 				</div><!-- card mb-4 --> 
 			</div><!-- col-lg-6 --> 
 			
-	
-	
-	
-	12121
+
 	
 	
 	<%end if %>
 
 </div><!-- row --> 
 
-	
-
-<script src="../731/dist/js/jquery-3.2.1.min.js"></script>
-<script src="../731/dist/js/bootstrap.min.js"></script>
-<script src="../731/dist/js/plugins/pace.min.js"></script>
-
-<a href="#0" class="cd-top">Top</a>
-
 </body>
 </html>
+
+<!-- top --> 
+<a href="#0" class="cd-top">Top</a>
+
+
+<script src="js/check.js"></script>
+
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/pace.min.js"></script>
+
+
+

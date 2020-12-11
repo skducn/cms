@@ -1,6 +1,5 @@
 <!--#include file="bFrame.asp"-->
-<!--#include file="../md5.asp"-->
-<!--#include file="../common/constant.asp"-->
+
 
 <script type="text/javascript" src="md5.js"></script>
 

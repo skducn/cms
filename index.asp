@@ -19,7 +19,7 @@ end if
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>登录 | <%=cstCompany%></title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="js/index.css">
 </head>
 
 <!-- 登录 -->
@@ -95,7 +95,7 @@ rs.close
 </div>
 
 <div class="footer-w3l">
-	<p class="agile"><a href="http://172.21.200.153:88/" target="_blank">case 测试用例平台</a></p>
+	<p class="agile"><a href="http://<%=getServerIp()%>:88" target="_blank">case 测试用例平台</a></p>
 </div>
 
 </body>
