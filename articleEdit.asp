@@ -319,6 +319,8 @@ set rs = nothing
 </html>
 
 
+<!-- top -->
+<a href="#0" class="cd-top">Top</a>
 
 
 <!-- 左侧菜单，放在每个页面底部-->

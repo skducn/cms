@@ -324,7 +324,8 @@ end if
 </body>
 </html>
 
-
+<!-- top -->
+<a href="#0" class="cd-top">Top</a>
 
 <!-- 左侧菜单，放在每个页面底部-->
 <script src="js/menu/jquery-2.1.4.min.js"></script>
