@@ -12,7 +12,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="/favicon.ico" /> 
 <link rel="stylesheet" type="text/css" href="js/main.css">
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 
 
@@ -21,7 +21,7 @@
 
 
 <!-- ******************************************************************************************************************************************************************** -->	
-<body class="sidebar-mini fixed" onLoad="createQrcode()">
+<body class="sidebar-mini fixed">
 <div class="wrapper">
 	<header class="main-header hidden-print"><a class="logo" href="dashboard.html">CMS</a>	
 	    <nav class="navbar navbar-static-top"><a class="sidebar-toggle" href="#" data-toggle="offcanvas"></a>
@@ -86,9 +86,9 @@
 				  
 				<!-- 设置、个人信息、退出-->
 				  
-				<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i></a>
+				<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">设置<i class="fa fa-user fa-lg"></i></a>
 					<ul class="dropdown-menu settings-menu">
-						<li><a href="/backstage/bMain.html"><i class="fa fa-cog fa-lg"></i> 设置</a></li>
+						<li><a href="/backstage/bMain.html"><i class="fa fa-cog fa-lg"></i> 后台</a></li>
 					    <li><a href="/backstage/profile.html"><i class="fa fa-user fa-lg"></i> 个人信息</a></li>
 					    <li><a href="#" id="demoExit1"><i class="fa fa-sign-out fa-lg"></i>  <span>退出</span></a></li>		
 				 	</ul>

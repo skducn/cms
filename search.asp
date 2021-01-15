@@ -107,8 +107,8 @@
 					<h3 class="card-title">搜索 <%=s_name%> 记录数：<%=ubound(arrayTitle)%>条</h3>
 				</div>
 				<div class="col-md-6" align="right">
-					<a class='btn btn-primary' href='articleAdd-0-0.html' data-toggle="tooltip" data-original-title="新建文章"><i class='fa fa-plus'></i> 新建文章</a>		
-					<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底"><i class="fa fa-arrow-circle-down"></i></a>		
+					<a class='btn btn-primary' href='articleAdd-0-0.html' data-toggle="tooltip" data-original-title="新建文章">新建<i class='fa fa-plus'></i></a>		
+					<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底">到页底<i class="fa fa-arrow-circle-down"></i></a>		
 				</div>
 			</div>
 			
@@ -149,7 +149,7 @@
 				<div class="col-md-2">
 				</div>
 				<div class="col-md-10" align="right">
-					<a href="#top"><button type="text" class="btn btn-primary"  href="#" data-toggle="tooltip" data-original-title="回页顶"><i class="fa fa-arrow-circle-up"></i></button></a>
+					<a href="#top"><button type="text" class="btn btn-primary"  href="#" data-toggle="tooltip" data-original-title="回页顶">回页顶<i class="fa fa-arrow-circle-up"></i></button></a>
 					<a id='DD'></a>
 				</div>
 			</div>

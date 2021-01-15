@@ -143,7 +143,7 @@ end if
 						</div>
 						</div>
 						</div>																							
-						<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底"><i class="fa fa-arrow-circle-down"></i></a>
+						<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底">到页底<i class="fa fa-arrow-circle-down"></i></a>
 					</div>
 				</div>
 							
@@ -334,25 +334,3 @@ end if
 <script  src="js/shortcutKey/bootstrap-notify.min.js"></script>
 
 
-<!-- QRcode 扫二维码，打开网页 <script src="js/QRcode/jquery-2.1.4.min.js"></script>-->
-<script src="js/QRcode/qrcode.js"></script>
-<script src="js/QRcode/utf.js"></script>
-<script src="js/QRcode/jquery.qrcode.js" ></script>
-<script >
-function makeCode(url) {
-var ip = "http://<% =getServerIp()%>"
-$("#qrcode").qrcode({
-render: "canvas",
-text: ip,
-width : "80",               //二维码的宽度
-height : "80",              //二维码的高度
-background : "#ffffff",       //二维码的后景色
-foreground : "#000000",        //二维码的前景色
-src: 'QRcode/logo.png'             //二维码中间的图片
-});
-}
-function createQrcode () {
-var url = '';//$('#url').val();
-makeCode(url);
-}
-</script> 
