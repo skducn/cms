@@ -54,8 +54,8 @@ end if
 <div class="content-wrapper">
 	<div class="page-title">
 		<div>
-			<h1><i class="fa fa-dashboard"></i> 我的面板</h1>
-			<p>Dashboard</p>
+			<h1>我的面板</h1>
+			<p>Dashboard<font color="white"><%response.write session.timeout%></font></p>
 		</div>
 		<div>
 			<ul class="breadcrumb">
@@ -69,7 +69,7 @@ end if
 	<div class="row">
 		<div class="col-md-6">
 			<div class="card">
-				<h3 class="card-title">开始启航 （<a href="/readme/index.html" target="_blank">使用说明</a>）</h3>
+				<h3 class="card-title">开始启航 （<a href="/demo/readme.html" target="_blank">使用说明</a>）</h3>
 				<p>CMS（内容管理系统）能帮你收集与管理内容信息，包括学习笔记。通过日积月累反复记录与学习，及时更新确保信息的准确性和真实性，从而养成一种良好的记录习惯，将相关知识要点（常用公式、代码等）整理在一起，所需时可便于快速查询，对知识点反复学习与思考，深入理解知识要点及原理，达到知其然而知其所以然，并应用于解决工作中遇到的问题。</p>
 				<p>孔子曰：<a href="https://baike.baidu.com/item/%E5%AD%A6%E8%80%8C%E4%B8%8D%E6%80%9D%E5%88%99%E7%BD%94%EF%BC%8C%E6%80%9D%E8%80%8C%E4%B8%8D%E5%AD%A6%E5%88%99%E6%AE%86/5176758?fr=aladdin" target="_blank">学而不思则罔，思而不学则殆</a> ，请时刻鞭策自己，不要松懈，坚持学习。</p>
 				
@@ -304,7 +304,6 @@ end if
 	<div class="col-md-2">
 	</div>
 	<div class="col-md-10" align="right">
-	<a href="#top"><button type="submit" class="btn btn-primary"  href="#" data-toggle="tooltip" data-original-title="回页顶"><i class="fa fa-arrow-circle-up"></i></button></a>
 	</a><a id='DD'></a>
 	</div>
 	</div>

@@ -12,12 +12,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="/favicon.ico" /> 
 <link rel="stylesheet" type="text/css" href="js/main.css">
-
-
-
-
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 
 
 <!-- ******************************************************************************************************************************************************************** -->	
@@ -86,7 +82,7 @@
 				  
 				<!-- 设置、个人信息、退出-->
 				  
-				<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">设置<i class="fa fa-user fa-lg"></i></a>
+				<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog fa-lg"></i> 设置</a>
 					<ul class="dropdown-menu settings-menu">
 						<li><a href="/backstage/bMain.html"><i class="fa fa-cog fa-lg"></i> 后台</a></li>
 					    <li><a href="/backstage/profile.html"><i class="fa fa-user fa-lg"></i> 个人信息</a></li>
@@ -136,8 +132,8 @@
 						<%set rs3 = server.createobject("adodb.recordset")       
 						rs3.open "select * from tblContent where tagId="&rs2("tagId")&" order by cName asc",conn,3,3
 						do while not rs3.eof  
-							if rs3("tagId")=rs2("tagId") then ' 当sub_id是字符类，则使用cstr转换数字为字符串，如cstr(rs7("sub_id")) %> 		  			 
-								<li><span><a href="article-<%=rs3("cId")%>-<%=rs3("sortId")%>.html"  target="_blank">&nbsp;<%=rs3("cName")%></a></span></li>							
+							if rs3("tagId")=rs2("tagId") then ' 当sub_id是字符类，则使用cstr转换数字为字符串，如cstr(rs7("sub_id")) %> 		
+								<li><span><a href="article-<%=rs3("cId")%>-<%=rs3("sortId")%>.html" target="_blank">&middot;&nbsp;<%=rs3("cName")%></a></span></li>								  																
 							<%end if
 						rs3.movenext
 						loop 
@@ -246,7 +242,7 @@
 					rs5.open "select * from tblSort where userName='"&rs1("userName")&"' and sortShare='on' and sortState='on' order by sortName,sortId asc",conn,3,3
 					if not rs5.eof then
 						do while not rs5.eof %>	
-						<li class="treeview"><a href="#">&omicron;&nbsp;<%=rs5("sortName")%></span><i class="fa fa-angle-right"></i></a>
+						<li class="treeview"><a href="#"><%=rs5("sortName")%></span><i class="fa fa-angle-right"></i></a>
 						<ul class="treeview-menu">																	
 								<% 	
 								set rs6 = server.createobject("adodb.recordset")   	  	  
@@ -256,13 +252,13 @@
 									set rs7 = server.createobject("adodb.recordset")   	  	  
 									rs7.open "select * from tblContent where sortId="&rs5("sortId")&" and tagId=0 order by cName,cId asc",conn,3,3
 									do while not rs7.eof%>							
-									<li>	<span><a href="articleOther-<%=rs7("cId")%>-<%=rs5("sortId")%>.html" target="_blank">&omicron;&nbsp;<%=rs7("cName")%></a>				</span></li>
+									<li>	<span><a href="articleOther-<%=rs7("cId")%>-<%=rs5("sortId")%>.html" target="_blank">&middot;&nbsp;<%=rs7("cName")%></a>				</span></li>
 									<%rs7.movenext
 									loop
 									rs7.close
 								else									
 									do while not rs6.eof%>	
-									<li class="treeview"><a href="#"><i class="fa fa-th-list"></i><span><%=rs6("tagName")%></span><i class="fa fa-angle-right"></i></a>
+									<li class="treeview"><a href="#"><span><%=rs6("tagName")%></span><i class="fa fa-angle-right"></i></a>
 									<ul class="treeview-menu">	
 										<%
 											set rs7 = server.createobject("adodb.recordset")   	  	  
@@ -323,7 +319,7 @@
 					if not rs11.eof then 
 						do while not rs11.eof %>
 							
-							<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="articleOther-<%=rs11("cId")%>-<%=rs11("sortId")%>.html"  target="BoardList">&middot;&nbsp;<%=rs11("cName")%></a></span></li>
+							<li>&nbsp;&nbsp;&nbsp;<span><a href="articleOther-<%=rs11("cId")%>-<%=rs11("sortId")%>.html"  target="BoardList"><%=rs11("cName")%></a></span></li>
 							
 						<% 
 						rs11.movenext

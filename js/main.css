@@ -64,6 +64,11 @@ a:hover {
   outline: 0;
 }
 
+li {
+word-wrap: break-word;
+white-space:normal;
+}
+
 abbr[title] {
   border-bottom: 1px dotted;
 }

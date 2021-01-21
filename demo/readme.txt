@@ -1,5 +1,7 @@
 1，准备好多张滚动图，如10张
-2，在index.html 添加10张图路径，如下：
+
+2，在 readme.html 添加10张图路径，如下：
+
 <div id="owl-demo" class="owl-carousel">
 	<a class="item"><img src="js/cms1.png" alt=""></a>
 	<a class="item"><img src="js/cms2.png" alt=""></a>
