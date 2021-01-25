@@ -17,7 +17,7 @@ end if
 <link rel="apple-touch-icon" sizes="76x76" href="assets/img/CN.png">
 <link rel="shortcut icon" href=" /favicon.ico" /> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<title>登录 | <%=cstCompany%></title>
+<title>登录 | <%=cstProject%></title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 <link rel="stylesheet" href="js/index.css">
 </head>
@@ -74,29 +74,29 @@ end if
 rs.close
 %>
 
-<!-- ********************************************************************************************************************************** -->	
+
 <body>	 	
 
-<h1>CMS knowledge base</h1>
-<div class="main-agileinfo">
-	<h2>知识库</h2>
-	<form action="indexLogin.html" method="post" >
-		<input type="text" name="userName" class="name" placeholder="用户名" required="required" style="border-radius: 6px;">
-		<input type="password" name="userPass" class="password" placeholder="密码" required="required">
-		<ul>
-		<li>
-		<input type="checkbox" id="brand1" value="">
-		<label for="brand1"><span></span>记住我</label>
-		</li>				
-		</ul>
-		<a href="#">忘记密码？</a><br>
-		<input type="submit" value="登录">
-	</form>
-</div>
-
-<div class="footer-w3l">
-	<p class="agile"><a href="http://<%=getServerIp()%>:88" target="_blank">case 测试用例平台</a></p>
-</div>
+	<h1>CMS knowledge base</h1>
+	<div class="main-agileinfo">
+		<h2>知识库</h2>
+		<form action="indexLogin.html" method="post" >
+			<input type="text" name="userName" class="name" placeholder="用户名" required="required" style="border-radius: 6px;">
+			<input type="password" name="userPass" class="password" placeholder="密码" required="required">
+			<ul>
+			<li>
+			<input type="checkbox" id="brand1" value="">
+			<label for="brand1"><span></span>记住我</label>
+			</li>				
+			</ul>
+			<a href="#">忘记密码？</a><br>
+			<input type="submit" value="登录">
+		</form>
+	</div>
+	
+	<div class="footer-w3l">
+		<p class="agile"><a href="http://<%=getServerIp()%>:88" target="_blank">case 测试用例平台</a></p>
+	</div>
 
 </body>
 </html>

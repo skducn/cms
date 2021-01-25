@@ -2,7 +2,7 @@
 
 <%=bMain%>
 
-<title><%=cstCompany%> | 管理用户类别</title>
+<title>管理用户类别 | <%=cstProject%>后台</title>
 
 <!--  获取用户所有类别，去重遍历 -->
 

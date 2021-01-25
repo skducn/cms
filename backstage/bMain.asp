@@ -2,11 +2,11 @@
 <%=bMain%>
 
 <%if session("userPower") = 1 then%>
-	<title><%=cstCompany%> | 超管仪表盘</title>
+	<title>超管仪表盘 | <%=cstProject%>后台</title>
 <%elseif session("userPower") = 3 then%>
-	<title><%=cstCompany%> | 普管仪表盘</title>
+	<title>普管仪表盘 | <%=cstProject%>后台</title>
 <%else%>
-	<title><%=cstCompany%> | 用户仪表盘</title>
+	<title>用户仪表盘 | <%=cstProject%>后台</title>
 <%end if %>
 
 

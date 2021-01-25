@@ -1,7 +1,7 @@
 <!--#include file="bFrame.asp"-->
 <%=bMain%>
 
-<title><%=cstCompany%> | 新建组</title>
+<title>新建组 | <%=cstProject%>后台</title>
 
 
 <!--  获取所有群组名 -->

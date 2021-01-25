@@ -102,7 +102,7 @@ rs.close
 		' 安全处理，方式url修改无效id
 		Response.Write("<script>window.open('index.html','_parent')</script>")
 	else%>	
-		<title><%=rs("cName")%> | <%=cstCompany%></title>				
+		<title><%=rs("cName")%> | <%=cstProject%></title>				
 		
 		<div class="row">
 		

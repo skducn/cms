@@ -1,7 +1,7 @@
 <!--#include file="bFrame.asp"-->
 <%=bMain%>
 
-<title><%=cstCompany%> | 编辑群组</title>
+<title>编辑群组 | <%=cstProject%>后台</title>
 
 <% groupId = request("groupId")%>
 

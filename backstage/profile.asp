@@ -10,7 +10,7 @@
 
 <%=bMain%>
 
-<title><%=cstCompany%> | 个人信息</title>        
+<title>个人信息 | <%=cstProject%>后台 </title>        
 
 
 <!--  获取所有用户的昵称，用于新用户中遍历 -->

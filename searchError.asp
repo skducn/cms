@@ -1,6 +1,6 @@
 <!--#include file="menu.asp"-->
 
-<title>╠Ю╪╜ндуб | <%=cstCompany%></title>
+<title>╠Ю╪╜ндуб | <%=cstProject%></title>
 
 
 

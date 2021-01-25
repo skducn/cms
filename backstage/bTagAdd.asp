@@ -1,7 +1,7 @@
 <!--#include file="bFrame.asp"-->
 <%=bMain%>
 
-<title><%=cstCompany%> | 新建标签</title>
+<title>新建标签 | <%=cstProject%>后台</title>
 
 <% sortId = request("sortId")%>
 

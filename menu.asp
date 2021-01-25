@@ -19,7 +19,7 @@
 <!-- ******************************************************************************************************************************************************************** -->	
 <body class="sidebar-mini fixed">
 <div class="wrapper">
-	<header class="main-header hidden-print"><a class="logo" href="dashboard.html">CMS</a>	
+	<header class="main-header hidden-print"><a class="logo" href="dashboard.html"><%=cstProject%></a>	
 	    <nav class="navbar navbar-static-top"><a class="sidebar-toggle" href="#" data-toggle="offcanvas"></a>
 	
 	

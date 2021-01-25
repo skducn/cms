@@ -1,7 +1,7 @@
 <!--#include file="bFrame.asp"-->
 <%=bMain%>
 
-<title><%=cstCompany%> | 新增组员</title>
+<title>新增组员 | <%=cstProject%>后台</title>
 
 <!--  获取所有组员的昵称，去重遍历 -->
 

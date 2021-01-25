@@ -1,7 +1,7 @@
 <!--#include file="bFrame.asp"-->
 <%=bMain%>
 
-<title><%=cstCompany%> | 编辑标签</title>
+<title>编辑标签 | <%=cstProject%>后台</title>
 
 
 <%

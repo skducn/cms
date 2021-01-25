@@ -1,6 +1,6 @@
 <!--#include file="menu.asp"-->
 
-<title>ËÑÒ»ËÑ | <%=cstCompany%></title>
+<title>ËÑÒ»ËÑ | <%=cstProject%></title>
 
 <div class="content-wrapper">
 	<div class="row">	

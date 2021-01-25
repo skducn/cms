@@ -2,7 +2,7 @@
 
 <%=bMain%>
 
-<title><%=cstCompany%> | 编辑类别</title>
+<title>编辑类别 | <%=cstProject%>后台</title>
 
 <%sortId = request("sortId")  %>
 

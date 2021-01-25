@@ -1,7 +1,7 @@
 <!--#include file="bFrame.asp"-->
 <%=bMain%>
 
-<title><%=cstCompany%> | 新建类别</title>
+<title>新建类别 | <%=cstProject%>后台</title>
 
 
 <!--  获取当前用户所有类别，去重遍历 -->

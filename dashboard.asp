@@ -1,6 +1,6 @@
 <!--#include file="menu.asp"-->
 
-<title>我的面板 | <%=cstCompany%></title>
+<title>我的面板 | <%=cstProject%></title>
 
 
 <!-- 新增快捷键 -->

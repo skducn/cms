@@ -1,7 +1,7 @@
 <!--#include file="bFrame.asp"-->
 <%=bMain%>
 
-<title><%=cstCompany%> | 编辑组员</title>
+<title>编辑组员 | <%=cstProject%>后台</title>
 
 <!--  上传头像	-->	
 <script type="text/javascript" src="scripts/swfobject.js"></script>

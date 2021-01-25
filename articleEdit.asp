@@ -1,7 +1,7 @@
 <!--#include file="menu.asp"-->
 <!--#include file="ajaxMain.asp"-->
 
-<title>编辑文章 | <%=cstCompany%></title>
+<title>编辑文章 | <%=cstProject%></title>
 
 
 <!-- 权限验证 -->

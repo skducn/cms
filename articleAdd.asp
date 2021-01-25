@@ -1,6 +1,6 @@
 <!--#include file="menu.asp"-->
 
-<title>新建文章 | <%=cstCompany%></title>
+<title>新建文章 | <%=cstProject%></title>
 
 <%
 set rs4 = server.createobject("adodb.recordset") 

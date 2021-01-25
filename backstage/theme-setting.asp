@@ -1,6 +1,6 @@
 <!--#include file="bFrame.asp"-->
 
-<title><%=cstCompany%> | 主题背景</title>  
+<title>主题背景 | <%=cstProject%>后台</title>  
             
             <div class="content-wrapper">
 
