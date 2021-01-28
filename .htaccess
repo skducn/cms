@@ -21,7 +21,6 @@ RewriteRule ^searchError-(.*).html /searchError.asp?sname=$1
 RewriteRule ^dashboard.html /dashboard.asp
 RewriteRule ^dashboardSave.html /dashboard.asp?action=save
 RewriteRule ^dashboardSaveShort.html /dashboard.asp?action=saveShort
-RewriteRule ^menu.html /menu.asp
 RewriteRule ^menu-delTag-(.*).html /menu.asp?action=delTag&tagId=$1
 RewriteRule ^menu-delSort-(.*).html /menu.asp?action=delSort&sortId=$1
 
