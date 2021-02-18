@@ -8,7 +8,7 @@
 	response.charset="gb2312"
 	set rs = server.createobject("adodb.recordset")
 	rs.open "select * from tblSort where userName='"&session("userName")&"' and sortState='on' order by sortName,sortId asc",conn,3,3
-%>	<option  value="" selected> 移驾到 ...</option>
+%>	<option  value="" selected> 移动到类别 ...</option>
 	<%do while not rs.eof%>
 	<option value="<%=rs("sortId")%>" ><%=rs("sortName")%></option>
 	<%

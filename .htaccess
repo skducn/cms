@@ -12,7 +12,7 @@ RewriteRule ^lock.html /lock.asp
 RewriteRule ^lockLogin.html /lock.asp?action=login
 
 RewriteRule ^searchSearch.html /search.asp?action=search
-RewriteRule ^searchTag-(.*).html /search.asp?action=tag&tagId=$1
+RewriteRule ^searchTag-(.*)-(.*).html /search.asp?action=tag&sortId=$1&tagId=$2
 RewriteRule ^searchSort-(.*).html /search.asp?action=sort&sortId=$1
 RewriteRule ^searchResult-(.*).html /searchResult.asp?cId=$1
 RewriteRule ^searchEdit-(.*).html /searchEdit.asp?cId=$1

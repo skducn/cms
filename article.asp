@@ -109,12 +109,12 @@ rs.close
 				<% set rs1 = server.createobject("adodb.recordset")
 				rs1.open "select * from tblSort where sortId="&rs("sortId")&"" ,conn,3,3      	
 				if rs("tagId")="0" then%>
-				<i class="fa fa-home fa-lg"></i> &rsaquo; <%=rs1("sortName")%>
+				<i class="fa fa-home fa-lg"></i> &rsaquo;  <a href="searchSort-<%=rs1("sortId")%>.html"><%=rs1("sortName")%></a>
 				<%else
 				set rs2 = server.createobject("adodb.recordset")			
 				rs2.open "select * from tblTag where tagId="&rs("tagId")&"" ,conn,3,3
-				%> <i class="fa fa-home fa-lg"></i> &rsaquo; <%=rs1("sortName")%> &rsaquo;
-				<a href="searchTag-<%=rs2("tagId")%>.html"><%=rs2("tagName")%></a>
+				%> <i class="fa fa-home fa-lg"></i> &rsaquo;  <a href="searchSort-<%=rs1("sortId")%>.html"><%=rs1("sortName")%></a> &rsaquo;
+				<a href="searchTag-<%=rs1("sortId")%>-<%=rs2("tagId")%>.html"><%=rs2("tagName")%></a>
 				<%rs2.close 
 				set rs2 = nothing 
 				end if
@@ -166,18 +166,18 @@ rs.close
 				
 				<div class="btn-group">	
 				<% if session("userName")= rs("userName") then %>																																																								
-					<a class="btn btn-primary" target="_blank" href="articleAdd-<%=rs("sortId")%>-<%=rs("tagId")%>.html" data-toggle="tooltip" data-original-title="新建"><i class="fa fa-plus"></i> 新建</a>								
-					<a class="btn btn-info" href="articleEdit-<%=request("cId")%>.html" data-toggle="tooltip" data-original-title="编辑"><i class="fa fa-edit"></i> 编辑</a>
-					<a class="btn btn-warning" href="#" onClick="ajaxSort();" data-toggle="tooltip" data-original-title="转移"><i class="fa fa-truck"></i> 转移</a>
+					<a class="btn btn-primary" target="_blank" href="articleAdd-<%=rs("sortId")%>-<%=rs("tagId")%>.html" data-toggle="tooltip" data-original-title="新建"><i class="fa fa-plus"></i></a>								
+					<a class="btn btn-info" href="articleEdit-<%=request("cId")%>.html" data-toggle="tooltip" data-original-title="编辑"><i class="fa fa-edit"></i></a>
+					<a class="btn btn-warning" href="#" onClick="ajaxSort();" data-toggle="tooltip" data-original-title="转移"><i class="fa fa-truck"></i></a>
 					<% if rs("cShare") = "on" then%>
-						<a class="btn btn-default" onClick="checkNoShare()" href="articleNoshare-<%=request("cId")%>-<%=request("sortId")%>.html"  data-toggle="tooltip" data-original-title="不共享"><i class="fa fa-reply"></i> 不共享</a>
+						<a class="btn btn-default" onClick="checkNoShare()" href="articleNoshare-<%=request("cId")%>-<%=request("sortId")%>.html"  data-toggle="tooltip" data-original-title="独享"><i class="fa fa-reply"></i></a>
 					<%else%>
-						<a class="btn btn-success" onClick="checkShare()" href="articleShare-<%=request("cId")%>-<%=request("sortId")%>.html"  data-toggle="tooltip" data-original-title="共享"><i class="fa fa-share"></i> 共享</a>
+						<a class="btn btn-success" onClick="checkShare()" href="articleShare-<%=request("cId")%>-<%=request("sortId")%>.html"  data-toggle="tooltip" data-original-title="共享"><i class="fa fa-share"></i></a>
 					<%end if
 				end if %>	
 				</div>
 							
-				<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底"><i class="fa fa-arrow-circle-down"></i> 到页底</a>
+				<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底"><i class="fa fa-arrow-circle-down"></i></a>
 			</div> 
 		</div> <!-- row end -->
 	
@@ -212,13 +212,13 @@ rs.close
 			<div class="col-md-6">
 				<div class="btn-group">	
 				<% if session("userName")= rs("userName") then %>																																																								
-					<a class="btn btn-primary" target="_blank" href="articleAdd-<%=rs("sortId")%>-<%=rs("tagId")%>.html" data-toggle="tooltip" data-original-title="新建"><i class="fa fa-plus"></i> 新建</a>								
-					<a class="btn btn-info" href="articleEdit-<%=request("cId")%>.html" data-toggle="tooltip" data-original-title="编辑"><i class="fa fa-edit"></i> 编辑</a>
-					<a class="btn btn-warning" href="#" onClick="ajaxSort();" data-toggle="tooltip" data-original-title="转移"><i class="fa fa-truck"></i> 转移</a>
+					<a class="btn btn-primary" target="_blank" href="articleAdd-<%=rs("sortId")%>-<%=rs("tagId")%>.html" data-toggle="tooltip" data-original-title="新建"><i class="fa fa-plus"></i></a>								
+					<a class="btn btn-info" href="articleEdit-<%=request("cId")%>.html" data-toggle="tooltip" data-original-title="编辑"><i class="fa fa-edit"></i></a>
+					<a class="btn btn-warning" href="#" onClick="ajaxSort();" data-toggle="tooltip" data-original-title="转移"><i class="fa fa-truck"></i></a>
 					<% if rs("cShare") = "on" then%>
-						<a class="btn btn-default" onClick="checkNoShare()" href="articleNoshare-<%=request("cId")%>-<%=request("sortId")%>.html"  data-toggle="tooltip" data-original-title="不共享"><i class="fa fa-reply"></i> 不共享</a>
+						<a class="btn btn-default" onClick="checkNoShare()" href="articleNoshare-<%=request("cId")%>-<%=request("sortId")%>.html"  data-toggle="tooltip" data-original-title="独享"><i class="fa fa-reply"></i></a>
 					<%else%>
-						<a class="btn btn-success" onClick="checkShare()" href="articleShare-<%=request("cId")%>-<%=request("sortId")%>.html"  data-toggle="tooltip" data-original-title="共享"><i class="fa fa-share"></i> 共享</a>
+						<a class="btn btn-success" onClick="checkShare()" href="articleShare-<%=request("cId")%>-<%=request("sortId")%>.html"  data-toggle="tooltip" data-original-title="共享"><i class="fa fa-share"></i></a>
 					<%end if
 				end if %>	
 				</div>

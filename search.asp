@@ -21,6 +21,15 @@
 	s_named=replace(s_named,"[","’")    'asp在access中不支持'和[ 符号	
 	set rs = server.createobject("adodb.recordset") 
 	rs.open "select * from tblContent where userName='"&session("userName")&"' and cState='on' and cName like '%"&s_named&"%' order by cName asc",conn,3,3
+  elseif request("action") = "sort" then
+     set rs = server.createobject("adodb.recordset") 
+     rs.open "select * from tblContent where userName='"&session("userName")&"' and sortId="&request("sortId")&" and cState='on' order by cName asc",conn,3,3
+  elseif request("action") = "tag" then
+     set rs = server.createobject("adodb.recordset") 
+     rs.open "select * from tblContent where userName='"&session("userName")&"' and sortId="&request("sortId")&" and tagId="&request("tagId")&" and cState='on' order by cName asc",conn,3,3	
+  end if 
+ 
+	
 	if rs.recordcount = 0  then	%>
 		<div class="col-md-12">
 			<div class="card">
@@ -30,7 +39,7 @@
 				set rs4 = server.createobject("adodb.recordset") 
 				rs4.open "select * from tblSort where userName='"&session("userName")&"' and sortState='on'",conn,3,3
 				if not rs4.eof then%>
-				<p><a class='btn btn-primary' href='articleAdd-0-0.html'><i class='fa fa-plus'></i>&nbsp;新建文章</a></p>
+				<p><a class='btn btn-primary' href='articleAdd-0-0.html'><i class='fa fa-plus'></i>&nbsp;文章</a></p>
 				<%end if %>
 			</div>
 		</div>
@@ -107,8 +116,8 @@
 					<h3 class="card-title">搜索 <%=s_name%> 记录数：<%=ubound(arrayTitle)%>条</h3>
 				</div>
 				<div class="col-md-6" align="right">
-					<a class='btn btn-primary' href='articleAdd-0-0.html' data-toggle="tooltip" data-original-title="新建文章"><i class='fa fa-plus'></i> 新建</a>		
-					<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底"><i class="fa fa-arrow-circle-down"></i> 到页底</a>		
+					<a class='btn btn-primary' href='articleAdd-0-0.html' data-toggle="tooltip" data-original-title="新建文章"><i class='fa fa-plus'></i> 文章</a>		
+					<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底"><i class="fa fa-arrow-circle-down"></i></a>		
 				</div>
 			</div>
 			
@@ -128,7 +137,7 @@
 				<%for i=0 to ubound(arrayTitle)-1 %>
 					<tr>						
 						<td><a href="searchSort-<%=arraySortId(i)%>.html"><%response.write arraySortName(i)%></a></td>
-						<td><a href="searchTag-<%=arrayTagId(i)%>.html"><%response.write arrayTagName(i)%></a></td>
+						<td><a href="searchTag-<%=arraySortId(i)%>-<%=arrayTagId(i)%>.html"><%response.write arrayTagName(i)%></a></td>
 						<td><a href="searchResult-<%=arrayCid(i)%>.html"><%response.write arrayTitle(i)%></a></td>
 						<td><%response.write arrayAuthor(i)%></td>
 						<td><%response.write arrayCrtDate(i)%></td>
@@ -149,7 +158,7 @@
 				<div class="col-md-2">
 				</div>
 				<div class="col-md-10" align="right">
-					<a href="#top"><button type="text" class="btn btn-primary"  href="#" data-toggle="tooltip" data-original-title="回页顶"><i class="fa fa-arrow-circle-up"></i> 回页顶</button></a>
+					<a href="#top"><button type="text" class="btn btn-primary"  href="#" data-toggle="tooltip" data-original-title="回页顶"><i class="fa fa-arrow-circle-up"></i></button></a>
 					<a id='DD'></a>
 				</div>
 			</div>
@@ -160,7 +169,7 @@
 <%	
 rs.close
 set rs = nothing
-end if 
+
 %>
 
 </div>	

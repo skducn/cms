@@ -9,7 +9,7 @@
 	set rs = server.createobject("adodb.recordset") 
 	rs.open "select * from tblTag where sortId="&sortId&" and tagState='on' order by tagName asc",conn,3,3 %>
 	<select name="tagId"  onchange="ajaxInfo(this.value)" class="form-control">
-	标签 *<option  value="" selected> 移驾到...</option>
+	标签 *<option  value="" selected> 移动到标签 ...</option>
 	<option value="sortId<%=sortId%>"> / </option>
 	<% do while not rs.eof%>
 	<option value="<%=rs("tagId")%>"><%=rs("tagName")%></option>

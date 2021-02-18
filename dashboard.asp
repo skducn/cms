@@ -86,9 +86,9 @@ end if
 					set rs = server.CreateObject("adodb.recordset")
 					rs.open "select * from tblContent where userName='"&session("userName")&"' order by cId desc",conn,3,3		
 					if rs.recordcount <> 0 then %>								
-						<a class="btn btn-primary" href="articleAdd-0-0.html"><i class="fa fa-plus"></i>&nbsp;新建文章</a>			
+						<a class="btn btn-primary" href="articleAdd-0-0.html"><i class="fa fa-plus"></i>&nbsp;文章</a>			
 					<%else%>
-						<a class="btn btn-primary" href="articleAdd.html"><i class="fa fa-plus"></i>&nbsp;新建文章</a>		
+						<a class="btn btn-primary" href="articleAdd.html"><i class="fa fa-plus"></i>&nbsp;文章</a>		
 					<%end if 
 					rs.close
 					set rs = nothing 
@@ -98,7 +98,7 @@ end if
 				
 					
 
-				<a class=" btn btn-info" href="http://<%=getServerIp()%>:88" target="_blank" data-toggle="tooltip" data-original-title="http://<%=getServerIp()%>:88"><i class="fa fa-list"></i>&nbsp;测试用例集</a>
+				<a class=" btn btn-info" href="http://<%=getServerIp()%>:88" target="_blank" data-toggle="tooltip" data-original-title="http://<%=getServerIp()%>:88"><i class="fa fa-list"></i>&nbsp;测试用例</a>
 				
 				<br>	<br>	<br>
 				</div>
@@ -143,7 +143,7 @@ end if
 						</div>
 						</div>
 						</div>																							
-						<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底">到页底<i class="fa fa-arrow-circle-down"></i></a>
+						<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="到页底"><i class="fa fa-arrow-circle-down"></i></a>
 					</div>
 				</div>
 							
@@ -174,7 +174,7 @@ end if
 		<div class="col-md-6">
 			<div class="card">
 				<div class="card-body">
-					<h3 class="card-title">最近新增的文章</h3>
+					<h3 class="card-title">新增文章</h3>
 					<table class="table table-hover table-bordered" id="dashboard_addArticle">
 					<thead><tr>
 					<th style="width: 20%">类别名称</th>
@@ -208,7 +208,7 @@ end if
 		<div class="col-md-6">
 			<div class="card">
 				<div class="card-body">
-					<h3 class="card-title">最近编辑的文章</h3>
+					<h3 class="card-title">已编辑文章</h3>
 					<table class="table table-hover table-bordered" id="dashboard_editArticle">
 					<thead><tr>
 					<th style="width: 20%">类别名称</th>

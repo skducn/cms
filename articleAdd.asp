@@ -184,7 +184,7 @@ end if
 					</div>
 				</div>
 									
-				<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="µ½Ò³µ×"><i class="fa fa-arrow-circle-down"></i> µ½Ò³µ×</a>
+				<a href="#DD" class="btn btn-primary" data-toggle="tooltip" data-original-title="µ½Ò³µ×"><i class="fa fa-arrow-circle-down"></i></a>
 			</div>
 		</div>
 				
@@ -314,7 +314,7 @@ end if
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-10" align="right">
-				<a href="#top"><button type="text" class="btn btn-primary"  href="#" data-toggle="tooltip" data-original-title="»ØÒ³¶¥"><i class="fa fa-arrow-circle-up"></i> »ØÒ³¶¥</button></a>
+				<a href="#top"><button type="text" class="btn btn-primary"  href="#" data-toggle="tooltip" data-original-title="»ØÒ³¶¥"><i class="fa fa-arrow-circle-up"></i></button></a>
 				<a id='DD'></a>
 			</div>
 		</div>
