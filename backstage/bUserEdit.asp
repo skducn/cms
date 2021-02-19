@@ -3,9 +3,6 @@
 
 <title>编辑组员 | <%=cstProject%>后台</title>
 
-<!--  上传头像	-->	
-<script type="text/javascript" src="scripts/swfobject.js"></script>
-<script type="text/javascript" src="scripts/fullAvatarEditor.js"></script>
 
 <% userId = request("userId")%>
 
