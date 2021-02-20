@@ -177,7 +177,7 @@ for each formName in upload.objFile  '列出所有上传了的文件
 			iCount=iCount+1
 		end if
 	else
-		FileNameOK = "default.jpg"     '默认文件名
+		FileNameOK = ""    
 	end if
 	set file=nothing
 next
@@ -213,7 +213,9 @@ End sub
 ' 提交	
 	set rs = server.CreateObject("ADODB.RecordSet")
 	rs.Open "select * from tblUser where userId="&upload.form("userId")&"",conn,3,3	
+	if FileNameOK <> "" then
 	rs("userHead") = "/backstage/img/"&FileNameOK 
+	end if 
 	rs("userEmail") = upload.form("userEmail") 
 	rs("userNickname") = upload.form("userNickname") 
 	rs("userPhone") = upload.form("userPhone") 
@@ -286,7 +288,22 @@ end if
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="exampleFormControlInput1">头像</label><br>
-							<input name="FileName" type="FILE" class="tx1" size="23">
+						
+							
+								<div class="form-group">
+								
+								<div class="col-sm-12">
+								<div class="input-group">
+								<label class="input-group-btn">
+								<input type="button" id="i-check" value="选择文件（建议100*100像素的 jpg/png）" class="btn btn-primary" onclick="$('#i-file').click();" >
+								</label>
+								</div>
+								</div>
+								<input type="file" name="fileName" id='i-file'  accept=".jpg, .png" onchange="$('#location').val($('#i-file').val());" style="display: none">
+								</div>
+
+
+							
 						</div>
 						<div class="form-group col-md-6" align="right">
 							<input type="submit" value="提交" class="btn btn-primary" />

@@ -3,6 +3,10 @@
 <!--#include file="constant.asp"-->
 <!--#include file="md5.asp"-->
 
+<!-- https://fontawesome.com/icons?d=gallery&q=project  icon
+http://demo.kangjingept.com:8020/cssthemes6/dgfp_82_busines/index.html  模版
+-->
+
 <% 
 if request("action")="exit" then
 Session.Abandon()
@@ -14,12 +18,27 @@ end if
 <html>
 <head>
 <meta charset="utf-8" />
-<link rel="apple-touch-icon" sizes="76x76" href="assets/img/CN.png">
 <link rel="shortcut icon" href=" /favicon.ico" /> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>登录 | <%=cstProject%></title>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-<link rel="stylesheet" href="js/index.css">
+
+<link href="css/fontawesome.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/solid.css" rel="stylesheet">
+
+<style>
+
+input::-webkit-input-placeholder {
+/* placeholder颜色  */
+color: #aab2bd;
+/* placeholder字体大小  */
+font-size: 12px;
+/* placeholder位置  */
+text-align: left;
+}
+</style>
+
 </head>
 
 <!-- 登录 -->
@@ -77,32 +96,54 @@ rs.close
 
 <body>	 	
 
-	<h1>CMS knowledge base</h1>
-	<div class="main-agileinfo">
-		<h2>知识库</h2>
-		<form action="indexLogin.html" method="post" >
-			<input type="text" name="userName" class="name" placeholder="用户名" required="required" style="border-radius: 6px;">
-			<input type="password" name="userPass" class="password" placeholder="密码" required="required">
-			<ul>
-			<li>
-			<input type="checkbox" id="brand1" value="">
-			<label for="brand1"><span></span>记住我</label>
-			</li>				
-			</ul>
-			<a href="#">忘记密码？</a><br>
-			<input type="submit" value="登录">
-		</form>
+<div class="signupform">
+	<div class="container">
+		<!-- main content -->
+		<div class="agile_info">
+			<div class="w3l_form">
+				<div class="left_grid_info">
+					<h1>CMS Knowledge base <br>知识库</h1>
+					<p>CMS 知识库是自我知识体系记录与管理系统，好记性不如烂笔头，通过日积月累地记录、更新、学习，来完善与提高我们深层次的认知水平，使记录的内容更加准确，如专业业务流程、工具设置技巧、常用公式、优秀代码与文章收藏、自我总结等，对知识的适当储备，在所需时可快速查询与使用，从而养成一种对记录、阅读、持续更新的良好习惯，对知识的理解达到知其然而知其所以然，使之在工作与生活中快速高效地解决问题。</p>
+					<img src="./images/index.jpg" alt="">
+				</div>
+			</div>
+			<div class="w3_info ">
+				<h2>欢迎使用CMS <span class="fa fa-book"></span></h2>
+				<p>请登录您的账号</p>
+				<form action="indexLogin.html" method="post">
+					<label>账号</label>
+					<div class="input-group">
+						<span class="fa fa-user-alt" aria-hidden="true"></span>
+						<input type="text" name="userName" placeholder="请输入..." required=""> 
+					</div>
+					<label>密码</label>
+					<div class="input-group">
+						<span class="fa fa-lock" aria-hidden="true"></span>
+						<input type="Password" name="userPass" placeholder="请输入..." required="">
+					</div> 
+					<div class="login-check">
+						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> 记住我</label>
+					</div>						
+						<button class="btn btn-danger btn-block" type="submit">登录</button>                
+				</form>
+				<p class="account">点击登录，同意与认可<a href="#">CMS使用规范</a></p>
+				<p class="account1">我没有账号？<a href="mailto:h.jin@zy-healthtech.com">申请账号</a></p>
+				<p class="account1 fa fa-tasks" align="right"> <a href="http://<%=getServerIp()%>:88" target="_blank">测试用例平台</a></p>
+			</div>
+		</div>
+		<!-- //main content -->
 	</div>
+</div>
+
+
 	
-	<div class="footer-w3l">
-		<p class="agile"><a href="http://<%=getServerIp()%>:88" target="_blank">case 测试用例平台</a></p>
+	
+	<div class="footer-w3l" align="center">
+
 	</div>
 
 </body>
 </html>
 
-<!--背景图片自动更换-->	
-<script src="js/background/jquery.min.js"></script>
-<script src="js/background/supersized.3.2.7.min.js"></script>
-<script src="js/background/supersized-init.js"></script>
+
 
