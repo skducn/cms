@@ -91,7 +91,7 @@ end if%>
 						<input name="latestLoginIp" type="hidden" value="<%=getClientIp()%>" >
 						<input name="userName2" type="hidden" value="<%=rs4("userName")%>" >		
 						<button class="btn btn-danger btn-block" type="submit">快速登录</button>   
-						<p class="account" align="right"><a href="indexClear-<%=rs4("userName")%>.html" class="lock11">我不是“<%=rs4("userNickname")%>”，切换账号</a></p>
+						<p class="account" align="right"><a href="indexClear-<%=rs4("userName")%>.html" class="lock11">我不是<%=rs4("userNickname")%>，切换账号</a></p>
 						<%
 						else
 						response.Redirect("index.html")		
