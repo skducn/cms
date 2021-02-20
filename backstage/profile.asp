@@ -287,7 +287,7 @@ end if
 				<div class="card-body">			
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label for="exampleFormControlInput1">头像</label><br>
+							<label for="exampleFormControlInput1">头像（建议100*100像素的 jpg/png）<a href="http://tool.c7sky.com/image-resize/" target="_blank">头像图片尺寸在线裁剪工具</a></label><br>
 						
 							
 								<div class="form-group">
@@ -295,11 +295,12 @@ end if
 								<div class="col-sm-12">
 								<div class="input-group">
 								<label class="input-group-btn">
-								<input type="button" id="i-check" value="选择文件（建议100*100像素的 jpg/png）" class="btn btn-primary" onclick="$('#i-file').click();" >
+								<input type="button" id="i-check" value="选择文件" class="btn btn-warning" onClick="$('#i-file').click();" >
+								
 								</label>
 								</div>
 								</div>
-								<input type="file" name="fileName" id='i-file'  accept=".jpg, .png" onchange="$('#location').val($('#i-file').val());" style="display: none">
+								<input type="file" name="fileName" id='i-file'  accept=".jpg, .png" onChange="$('#location').val($('#i-file').val());" style="display: none">
 								</div>
 
 

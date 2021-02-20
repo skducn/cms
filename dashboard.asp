@@ -70,7 +70,7 @@ end if
 		<div class="col-md-6">
 			<div class="card">
 				<h3 class="card-title">开始启航 （<a href="/demo/readme.html" target="_blank">使用说明</a>）</h3>
-				<p>CMS 知识库是自我知识体系记录与管理系统，好记性不如烂笔头，通过日积月累地记录、更新、学习，来完善与提高我们深层次的认知水平，使记录的内容更加准确，如专业业务流程、工具设置技巧、常用公式、优秀代码与文章收藏、自我总结等，对知识的适当储备，在所需时可快速查询与使用，从而养成一种对记录、阅读、持续更新的良好习惯，对知识的理解达到知其然而知其所以然，使之在工作与生活中快速高效地解决问题。</p>
+				<p><%=cstIntro%></p>
 				<p>孔子曰：<a href="https://baike.baidu.com/item/%E5%AD%A6%E8%80%8C%E4%B8%8D%E6%80%9D%E5%88%99%E7%BD%94%EF%BC%8C%E6%80%9D%E8%80%8C%E4%B8%8D%E5%AD%A6%E5%88%99%E6%AE%86/5176758?fr=aladdin" target="_blank">学而不思则罔，思而不学则殆</a> ，请时刻鞭策自己，不要松懈，坚持学习。</p>
 				
 				<div class="pull-right image" id='qrcode'></div>
@@ -330,6 +330,6 @@ end if
 <script src="js/menu/bootstrap.min.js"></script>
 <script src="js/menu/plugins/pace.min.js"></script>
 <script src="js/menu/main.js"></script>
-<script  src="js/shortcutKey/bootstrap-notify.min.js"></script>
+<script src="js/shortcutKey/bootstrap-notify.min.js"></script>
 
 

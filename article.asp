@@ -91,8 +91,7 @@ rs.close
 <div class="col-md-12">
 <div class="card">
 <div class="card-body">
-<!-- 用于页面百分比显示2/3 , 放在这里百分比在最高浮层 -->
-<div id="percentageCounter"><h1>0%</h1></div>	
+
 
 	<%set rs = server.createobject("adodb.recordset")
 	rs.open "select * from tblContent where cId="&int(request("cId"))&"",conn,3,3	
@@ -243,17 +242,18 @@ rs.close
 </html>
 
 <!-- top -->
-<a href="#0" class="cd-top">Top</a>
+<a href="#" class="cd-top">Top</a>
 
-
-<!-- 用于页面百分比显示1/3 -->
-<link href="js/percent/percent.css" rel="stylesheet" type="text/css" />
-<script src="js/percent/percent.js"></script>
 
 
 <!-- 左侧菜单，放在每个页面底部-->
 <script src="js/menu/jquery-2.1.4.min.js"></script>
 <script src="js/menu/bootstrap.min.js"></script>
-<script src="js/menu/plugins/pace.min.js"></script>
 <script src="js/menu/main.js"></script>
-<script src="js/shortcutKey/bootstrap-notify.min.js"></script>
+
+
+
+
+
+
+
