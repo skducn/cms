@@ -5,6 +5,9 @@
 <title>个人信息 | <%=cstProject%>后台 </title>        
 
 
+<style>
+
+</style>
 
 <!--  获取所有用户的昵称，用于新用户中遍历 -->
 <%
@@ -258,7 +261,7 @@ end if
 					rs.Open "select * from tblUser where userId="&session("userId")&"",conn,3,3
 					%>
 					<div class="mx-5 my-4 px-4" align="center">
-					<img src="<%=rs("userHead")%>" class="img-thumbnail img-fluid rounded-circle">
+						<img src="<%=rs("userHead")%>" class="img-thumbnail img-circle user-image">	
 					</div>
 				
 					<div class="text-center">

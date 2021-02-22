@@ -12862,3 +12862,14 @@ You can remove these (only for demo purpose)
 .color-swatch .top-bar {
   height: 12%;
 }
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.user-image {
+  border: 3px solid #fff;
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
