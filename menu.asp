@@ -11,8 +11,10 @@
 <link rel="shortcut icon" href=" /favicon.ico" /> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" href="/favicon.ico" /> 
+
 <link rel="stylesheet" type="text/css" href="js/main.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
 <!-- https://fontawesome.dashgame.com/ ，确保 fonts不能删除 -->	
 </head>
 
@@ -94,7 +96,7 @@
 				</li>			  
             	</ul>
 			</div>
-    	</nav>
+   	  </nav>
 	</header>
 	
 	
