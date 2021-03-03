@@ -93,8 +93,7 @@ rs.close
 <div class="card">
 <div class="card-body">
 
-<!-- 用于页面百分比显示2/3 , 放在这里百分比在最高浮层 -->
-<div id="percentageCounter"><h1>0%</h1></div>	
+
 
 	<%set rs = server.createobject("adodb.recordset")
 	rs.open "select * from tblContent where cId="&int(request("cId"))&"",conn,3,3	
@@ -195,10 +194,16 @@ rs.close
 				<%set rs9 = server.CreateObject("ADODB.RecordSet")
 				rs9.Open "select * from tblUser where userName='"&rs("userName")&"'",conn,3,3%>		
 				
-				<div class="pull-left image"><img class="img-circle" src="<%=rs9("userHead")%>" alt="User Image"></div>
-				<p></p>				<p></p>				<p></p><p></p>				<p></p>				<p></p><p></p>				<p></p>				<p></p><p></p>				<p></p>				<p></p>
-				<h3><b><font color="#CC6600">&nbsp;&nbsp;<%=rs9("userNickName")%></font></b></h3>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;<%=rs9("userTitle")%></p>	
+				<div class="mx-5 my-4 px-4" align="center">
+						<img src="<%=rs9("userHead")%>" class="img-thumbnail img-circle user-image">	
+					</div>
+				
+					<div class="text-center">
+					<h4 class="weight-400"><%=rs9("userNickName")%></h4>
+					<%=rs9("userTitle")%>
+					</div>
+					
+			
 				<%rs9.close%>	
 				
 			

@@ -15635,3 +15635,14 @@ be a descendant of the grid when it is being dragged.
   background: none;
   cursor: pointer;
 }
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.user-image {
+  border: 3px solid #fff;
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
