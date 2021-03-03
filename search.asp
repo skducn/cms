@@ -123,14 +123,14 @@
 			
 			<table class="table table-hover table-bordered" id="search_record">
 				<thead><tr>
-				<th style="width: 8%">类别</th>
-				<th style="width: 8%">标签</th>
-				<th style="width: 30%">文章名称3</th>
-				<th style="width: 8%">创建者</th>
-				<th style="width: 13%">创建时间</th>
-				<th style="width: 13%">更新时间</th>
-				<th style="width: 7%">共享状态</th>
-				<th style="width: 13%">共享时间</th>
+				<th style="width: 10%">类别</th>
+				<th style="width: 10%">标签</th>
+				<th style="width: 25%">文章名称3</th>
+			
+				<th style="width: 15%">创建时间</th>
+				<th style="width: 15%">更新时间</th>
+				<th style="width: 10%">共享状态</th>
+				<th style="width: 15%">共享时间</th>
 				</tr>
 				</thead>
 				<tbody>			
@@ -139,7 +139,7 @@
 						<td><a href="searchSort-<%=arraySortId(i)%>.html"><%response.write arraySortName(i)%></a></td>
 						<td><a href="searchTag-<%=arraySortId(i)%>-<%=arrayTagId(i)%>.html"><%response.write arrayTagName(i)%></a></td>
 						<td><a href="searchResult-<%=arrayCid(i)%>.html"><%response.write arrayTitle(i)%></a></td>
-						<td><%response.write arrayAuthor(i)%></td>
+					
 						<td><%response.write arrayCrtDate(i)%></td>
 						<td><%response.write arrayDate(i)%></td>
 						<td><%if arrayShare(i) <> "off" then

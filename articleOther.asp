@@ -192,24 +192,15 @@ rs.close
 		
 			<div class="col-md-2">
 				<%set rs9 = server.CreateObject("ADODB.RecordSet")
-				rs9.Open "select * from tblUser where userName='"&rs("userName")&"'",conn,3,3%>		
-				
+				rs9.Open "select * from tblUser where userName='"&rs("userName")&"'",conn,3,3%>					
 				<div class="mx-5 my-4 px-4" align="center">
-						<img src="<%=rs9("userHead")%>" class="img-thumbnail img-circle user-image">	
-					</div>
-				
-					<div class="text-center">
-					<h4 class="weight-400"><%=rs9("userNickName")%></h4>
-					<%=rs9("userTitle")%>
-					</div>
-					
-			
-				<%rs9.close%>	
-				
-			
-				
-			
-				
+				<img src="<%=rs9("userHead")%>" class="img-thumbnail img-circle user-image">	
+				</div>			
+				<div class="text-center">
+				<h4 class="weight-400"><%=rs9("userNickName")%></h4>
+				<%=rs9("userTitle")%>
+				</div>							
+				<%rs9.close%>					
 			</div>
 			
 
@@ -218,13 +209,12 @@ rs.close
 				<h3 class="card-title"><%=rs("cName")%></h3>		
 						
 				<%if rs("cLatestDate") <> "" then%>
-					创建于：<%=rs("cLatestDate")%>
+					创建时间：<%=rs("cCrtDate")%>，更新时间：<%=rs("cLatestDate")%>
 				<%else%>
-					创建于：<%=rs("cCrtDate")%>								
+					创建时间：<%=rs("cCrtDate")%>								
 				<%end if %>									
-			</div>
-							
-		
+			
+									
 					
 			<!-- 文章转移 三联动 -->	
 			<% if session("userName")= rs("userName") then %>																								
@@ -232,13 +222,13 @@ rs.close
 				<div id="ajaxTagDiv"></div>
 				<div id="ajaxInfoDiv"></div>						
 			<%end if %>	
-		</div> <!-- row end -->					
+					
 						
 		<!-- 文章内容 -->
 		<br><%=rs("cContent")%><br>
 																		
-						
-						
+			</div> <!-- row end -->					
+					</div>	
 					
 			</a><a id='DD'></a>		
 						

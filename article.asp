@@ -188,9 +188,9 @@ rs.close
 			<div class="col-md-12">						
 				<h3 class="card-title"><%=rs("cName")%></h3>		
 				<%if rs("cLatestDate") <> "" then%>
-					创建于：<%=rs("cLatestDate")%>
+					创建时间：<%=rs("cCrtDate")%>，更新时间：<%=rs("cLatestDate")%>
 				<%else%>
-					创建于：<%=rs("cCrtDate")%>								
+					创建时间：<%=rs("cCrtDate")%>								
 				<%end if %>																					
 					
 			<!-- 文章转移 三联动 -->	
