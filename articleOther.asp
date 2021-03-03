@@ -256,14 +256,13 @@ rs.close
 <!-- top -->
 <a href="#0" class="cd-top">Top</a>
 
-<!-- 用于页面百分比显示1/3 -->
-<link href="js/percent/percent.css" rel="stylesheet" type="text/css" />
-<script src="js/percent/percent.js"></script>
+<!-- 表格 -->
+<script  src="js/table/custom.js"></script>
 
 
- <!-- 左侧菜单，放在每个页面底部-->
+<!-- 左侧菜单，放在每个页面底部-->
 <script src="js/menu/jquery-2.1.4.min.js"></script>
 <script src="js/menu/bootstrap.min.js"></script>
 <script src="js/menu/plugins/pace.min.js"></script>
 <script src="js/menu/main.js"></script>
-<script  src="js/shortcutKey/bootstrap-notify.min.js"></script>
+<script src="js/shortcutKey/bootstrap-notify.min.js"></script>

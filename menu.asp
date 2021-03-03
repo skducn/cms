@@ -15,6 +15,12 @@
 <link rel="stylesheet" type="text/css" href="js/main.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
+<!--
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/memu/bootstrap.min.js"></script>  
+ <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<link rel="stylesheet" type="text/css" href="css/1.css">
+
 <!-- https://fontawesome.dashgame.com/ ，确保 fonts不能删除 -->	
 </head>
 
