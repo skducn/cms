@@ -87,7 +87,7 @@ if request("action") = "save" then
 				rs3.open "select * from tblContent ",conn,3,3 
 				rs3.addnew
 				rs3("sortId") = request("sortId")
-				rs3("tagId") = rs1("tagId")
+				rs3("tagId") = request("tagId")
 				rs3("cState") = "on"
 				rs3("cName") = replace(replace(request("cName"),"'","") ,"[","") 
 				rs3("cContent") = request("cContent")
@@ -122,7 +122,8 @@ if request("action") = "save" then
 		end if 
 	else
 		 response.Write("<script>;alert('此文章已存在！');</script>") 
- 		 response.Write("<script>;window.location.href='articleAdd-"&request("sortId")&"-"&request("tagId")&".html';</script>") 
+ 		 response.Write("<script>;window.location.href='articleAdd-"&request("sortId")&"-"&request("tagIdOld")&".html';</script>") 
+ 
 
 	             
     end if
@@ -194,10 +195,6 @@ end if
 		<div class="form-group">
 			<!-- 类别 -->	
 			<label class="col-md-1 control-label" for="select">类别/标签 *</label>
-						
-			
-			
-			
 					<div class="col-md-2">
 					  <select name="sortId" class="form-control select2" onChange="changeselect1(this.value)">
 					 			
@@ -233,35 +230,32 @@ end if
 					
 					<label class="col-md-1 control-label" for="select">标签</label>	
 					<div class="col-md-2">
-					<%if request("tagId") = 0 then%>	
-					<select name="tagIdOld" class="form-control select4">
-				 <option value="0" selected="selected"> / </option>
-				</select>
-				<%else%>
-					<select name="tagIdOld" class="form-control select4" >
-					<% set rs33 = server.createobject("adodb.recordset")							
-					rs33.open "select * from tblTag where sortId="&request("sortId")&" and tagState='on' order by tagName asc",conn,3,3
-					if rs33.eof then%>
-						<option value="0" selected="selected">/</option>
-					<%else%>
-		<option value="0" selected="selected">/</option>
-						<%do while not rs33.eof%>
-							<option value="<%=rs33("tagId")%>" 
-								<%if rs33("tagId")=cint(request("tagId")) then %>
-									selected
-								<%end if%>>
-						<%=rs33("tagName")%></option>												
-						<%rs33.movenext
-						loop
-					end if
-					rs33.close%>
-					</select>																
-				<%end if %>
+						
+						<%if request("tagId") = 0 then%>	
+							<select name="tagIdOld" class="form-control select4">
+								<option value="0" selected="selected"> / </option>														
+							</select>						
+						<%else%>						
+							<select name="tagIdOld" class="form-control select4" >
+								<option value="0" selected="selected">/</option>
+								<% set rs33 = server.createobject("adodb.recordset")							
+								rs33.open "select * from tblTag where sortId="&request("sortId")&" and tagState='on' order by tagName asc",conn,3,3
+								if not rs33.eof then%>																	
+									<%do while not rs33.eof%>
+										<option value="<%=rs33("tagId")%>" 
+										<%if rs33("tagId")=cint(request("tagId")) then %>
+											selected
+										<%end if%>>
+										<%=rs33("tagName")%></option>												
+										<%rs33.movenext
+									loop
+								end if
+								rs33.close%>
+							</select>	
+						
+						<%end if %>
 					</div>
-			
-			
-			
-				 
+													 
 					
 			<!-- 自定义标签 -->	
 			<div class="col-md-2">
@@ -289,6 +283,7 @@ end if
 				<input name="cName" class="form-control" type="text" size="20" maxlength="20" >                         
 			</div>		
 			
+									
 				<div class="col-md-4" align="right">
 					<button class="btn btn-primary" type="submit"><i class="fa fa-fw  fa-check-circle"></i>&nbsp;提交</button>		
 			</div>			
@@ -332,7 +327,7 @@ end if
 <script src="js/menu/bootstrap.min.js"></script>
 <script src="js/menu/plugins/pace.min.js"></script>
 <script src="js/menu/main.js"></script>
-<script  src="js/shortcutKey/bootstrap-notify.min.js"></script>
+<script src="js/shortcutKey/bootstrap-notify.min.js"></script>
 
 <!-- 下拉框效果 -->
 <script src="js/dropDownList/select2.full.min.js"></script>
