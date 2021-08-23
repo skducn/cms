@@ -163,14 +163,15 @@ end if
 						
 						<div class="form-group col-md-6">
 							<label for="inputAddress">职称（0-10）</label>
-							<input type="text" name="userTitle"   maxlength="10" class="form-control" value="" placeholder="XX工程师">
+							<input type="text" name="userTitle"   maxlength="10" class="form-control" value="" placeholder="测试工程师">
 						</div>
 					</div>
 					
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="inputAddress">邮箱 * （<32）</label>
-							<input type="text" name="userEmail" id="userEmail"  maxlength="32" class="form-control"  placeholder="name@yz-healthtech.com" onKeyUp="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\@\.]/g,'')">
+							<!-- <input type="text" name="userEmail" id="userEmail"  maxlength="32" class="form-control"  placeholder="name@yz-healthtech.com" onKeyUp="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\@\.]/g,'')"> -->
+							<input type="text" name="userEmail" id="userEmail"  maxlength="32" class="form-control"  placeholder="name@zy-healthtech.com"> 
 						</div>
 						<div class="form-group col-md-6">
 							<label for="inputAddress">手机号（11）</label>

@@ -216,7 +216,8 @@ end if
 					%>			
 										
 					<div class="form-group col-md-6" align="center">
-						<img src="<%=rs("userHead")%>" class="img-thumbnail img-fluid rounded-circle">								
+						
+						<img src="../images/head/default.jpg" width="100" height="100">							
 						<br><br>
 					</div>
 																				
@@ -283,7 +284,7 @@ end if
 					<div class="form-row">
 						<div class="form-group col-md-3">
 						<label for="inputPassword4">” œ‰ *</label>
-						<input type="text" name="userEmail" id="userEmail" maxlength="32" class="form-control" value="<%=rs("userEmail")%>" onKeyUp="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\@\.]/g,'')">
+						<input type="text" name="userEmail" id="userEmail" maxlength="32" class="form-control" value="<%=rs("userEmail")%>" >
 						</div>
 						
 						<div class="form-group col-md-3">
