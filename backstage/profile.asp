@@ -318,7 +318,7 @@ end if
 					
 					<div class="form-row">
 						<div class="form-group col-md-6">
-						<label for="exampleFormControlInput1">”√ªß√˚</label>
+						<label for="exampleFormControlInput1">’À∫≈</label>
 						<input type="text" name="userName"   maxlength="15" class="form-control" value="<%=rs("userName")%>" disabled="disabled">
 						</div>
 						

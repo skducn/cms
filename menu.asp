@@ -113,7 +113,10 @@
     <div class="user-panel">		  
 		<%set rs = server.CreateObject("ADODB.RecordSet")
 		rs.Open "select * from tblUser where userId="&session("userId")&"",conn,3,3%>									
-		<div class="pull-left image"><img class="img-circle" src="<%=rs("userHead")%>" alt="User Image"></div>
+		<div class="pull-left image">
+			<img class="img-circle" src="<%=rs("userHead")%>" alt="User Image">
+			
+		</div>
 		<div class="pull-left info">
 			<p><%=rs("userNickName")%></p>
 			<p class="designation"><%=rs("userTitle")%></p>

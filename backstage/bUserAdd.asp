@@ -103,7 +103,7 @@ if request.form("sub")="sub" then
 	rs("userTitle") = userTitle
 	rs("userEmail") = userEmail
 	rs("userPhone") = userPhone
-	rs("userHead") = "/upload/img/default.jpg"
+	rs("userHead") = "/backstage/img/default.jpg"
 	rs("userState") = "on"
 	rs("userInfo") = userInfo
 	rs("userCrtDate") = now
@@ -138,7 +138,8 @@ end if
 				<div class="card-body">
 					
 					<div class="form-group col-md-12" align="center">
-						<img src="../images/head/default.jpg" width="100" height="100">
+						
+				     <img src="img/default.jpg" width="100" height="100">
 						<br><br>
 					</div>
 			
@@ -146,7 +147,7 @@ end if
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label for="exampleFormControlInput1">组员名 *（6-15）</label>
+							<label for="exampleFormControlInput1">账号 *（6-15）</label>
 							<input type="text" name="userName"   maxlength="15" class="form-control"  placeholder="username" onKeyUp="value=value.replace(/[^0-9a-zA-Z]/g,'')"/>
 						</div>
 					
@@ -163,7 +164,7 @@ end if
 						
 						<div class="form-group col-md-6">
 							<label for="inputAddress">职称（0-10）</label>
-							<input type="text" name="userTitle"   maxlength="10" class="form-control" value="" placeholder="测试工程师">
+							<input type="text" name="userTitle"   maxlength="10" class="form-control" value="" placeholder="jobtitle">
 						</div>
 					</div>
 					
@@ -175,7 +176,7 @@ end if
 						</div>
 						<div class="form-group col-md-6">
 							<label for="inputAddress">手机号（11）</label>
-							<input type="text" name="userPhone" id="userPhone"  maxlength="11" class="form-control">
+							<input type="text" name="userPhone" id="userPhone"  maxlength="11" class="form-control" placeholder="cellphone">
 						</div>
 					</div>
 					

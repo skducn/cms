@@ -101,8 +101,9 @@ end if%>
 					</div>
 				</form>
 	
-				<p class="account">点击登录，同意与认可<a href="#">CMS使用规范</a></p>
+
 				<p class="account1">我没有账号？<a href="mailto:h.jin@zy-healthtech.com">申请账号</a></p>
+					<p class="account1 fa fa-tasks" align="right"> <a href="http://<%=getServerIp()%>:88" target="_blank">测试用例平台</a></p>
 			</div>
 		</div>
 		<!-- //main content -->
