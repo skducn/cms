@@ -7,6 +7,10 @@
 <%
 tagId = request("tagId") 
 sortId = request("sortId") 
+
+if tagId = "" or tagId = 0 or tagId = Null then
+tagId=100
+end if 
 %>
 <!--  获取当前用户所有标签，去重遍历 -->
 
@@ -79,8 +83,7 @@ if request.form("sub")="sub" then
 	response.Redirect("bTagEdit-"&sortId&"-"&tagId&".html")
 end if 
 
-set rs = server.CreateObject("ADODB.RecordSet")
-rs.Open "select * from tblTag where tagId="&tagId&"",conn,3,3
+
 
 
 ' 删除空标签
@@ -92,7 +95,8 @@ if request("action")="del" then
 	rs.update
 	rs.close
 	set rs = nothing
-	response.Redirect("bMain.html")
+	response.Redirect("bTagEdit-"&sortId&"-0.html")
+	
 
 end if 
 %>
@@ -117,6 +121,10 @@ rs1.Open "select * from tblSort where sortId="&sortId&" order by sortName,sortId
 sortName = rs1("sortName")
 rs1.close
 set rs1 = nothing
+
+set rs = server.CreateObject("ADODB.RecordSet")
+rs.Open "select * from tblTag where tagId="&tagId&"",conn,3,3
+
 %>
 
 <div class="content">
@@ -205,7 +213,7 @@ set rs1 = nothing
 						<th>标签名称</th>
 						<th>标签状态</th>
 						<th>共享状态</th>
-						<th>可删除</th>						
+						<th>操作</th>						
 						</tr>
 						</thead>
 						<tbody>
