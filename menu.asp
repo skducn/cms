@@ -3,6 +3,10 @@
 <!--#include file="constant.asp"-->
 <%exitIndex()%>
 
+<%set rs = server.CreateObject("ADODB.RecordSet")
+rs.Open "select * from tblUser where userId="&session("userId")&"",conn,3,3 %>
+<%=rs("userName")%>
+<%rs.close%>
 
 <!DOCTYPE html>
 <html>
