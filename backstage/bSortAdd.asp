@@ -28,7 +28,7 @@ function CheckPost()
 {
 	//	类别
 	if (addForm.sortName.value == "" || addForm.sortName.value.length < 4){
-		alert("温馨提示，类别名称账号长度范围 4 - 8个字符！", function () {}, {type: 'warning', confirmButtonText: '确定'});
+		alert("温馨提示，类别名称账号长度范围 4 - 10个字符！", function () {}, {type: 'warning', confirmButtonText: '确定'});
 		addForm.sortName.focus();
 		return false;}
 		
@@ -96,8 +96,8 @@ end if
 					<form method="post" name="addForm" onSubmit="return CheckPost()">   
 					
 					<div class="form-group">
-						<label for="inputAddress">类别名称 * （4-8）</label>
-						<input type="text" name="sortName" id="sortName"  maxlength="8" class="form-control"  placeholder="" >
+						<label for="inputAddress">类别名称 * （4-10）</label>
+						<input type="text" name="sortName" id="sortName"  maxlength="10" class="form-control"  placeholder="" >
 					</div>
 					<div align="center">
 					<button type="submit" class="btn btn-primary" href="#">提交</button></div>

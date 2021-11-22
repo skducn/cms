@@ -204,7 +204,7 @@ end if
 						
 						if request("sortId") = 0 then %>
 							 <option value=""> &nbsp;<ÇëÑ¡Ôñ> </option>
-<%							rs6.open "select * from tblSort where userName='"&session("userName")&"' and sortState='on' ",conn,3,3	
+<%							rs6.open "select * from tblSort where userName='"&session("userName")&"' and sortState='on' order by sortName",conn,3,3	
 							do while not rs6.eof
 							response.write"<option value="&rs6("sortId")&">"&rs6("sortName")&"</option>"
 							rs6.movenext
